@@ -22,7 +22,7 @@ class CircuitRepository implements ICircuitFacade {
     try {
       final Response res =
           await _dioProvider.get("$_hostName/circuit$circuitSubLink");
-      final List jsonData = res.data as List;
+      final Map jsonData = res.data as Map;
       final int statusCode = res.statusCode;
       // print(_hostName + "/calendar");
       // print(jsonData);

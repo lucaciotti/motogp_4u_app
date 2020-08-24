@@ -26,24 +26,24 @@ class _$CircuitTearOff {
       @required String trackLongestStraight,
       @required String trackCornerLeft,
       @required String trackCornerRight,
-      @required CircuitStats motogpMostWins,
-      @required CircuitStats moto2MostWins,
-      @required CircuitStats moto3MostWins,
-      @required CircuitStats motogpMostPoles,
-      @required CircuitStats moto2MostPoles,
-      @required CircuitStats moto3MostPoles,
-      @required CircuitRecords motogpEverLapRecord,
-      @required CircuitRecords motogpRaceLapRecord,
-      @required CircuitRecords motogpBestPoleRecord,
-      @required CircuitRecords motogpTopSpeedRecord,
-      @required CircuitRecords moto2EverLapRecord,
-      @required CircuitRecords moto2RaceLapRecord,
-      @required CircuitRecords moto2BestPoleRecord,
-      @required CircuitRecords moto2TopSpeedRecord,
-      @required CircuitRecords moto3EverLapRecord,
-      @required CircuitRecords moto3RaceLapRecord,
-      @required CircuitRecords moto3BestPoleRecord,
-      @required CircuitRecords moto3TopSpeedRecord}) {
+      @required List<CircuitStats> motogpMostWins,
+      @required List<CircuitStats> moto2MostWins,
+      @required List<CircuitStats> moto3MostWins,
+      @required List<CircuitStats> motogpMostPoles,
+      @required List<CircuitStats> moto2MostPoles,
+      @required List<CircuitStats> moto3MostPoles,
+      CircuitRecords motogpEverLapRecord,
+      CircuitRecords motogpRaceLapRecord,
+      CircuitRecords motogpBestPoleRecord,
+      CircuitRecords motogpTopSpeedRecord,
+      CircuitRecords moto2EverLapRecord,
+      CircuitRecords moto2RaceLapRecord,
+      CircuitRecords moto2BestPoleRecord,
+      CircuitRecords moto2TopSpeedRecord,
+      CircuitRecords moto3EverLapRecord,
+      CircuitRecords moto3RaceLapRecord,
+      CircuitRecords moto3BestPoleRecord,
+      CircuitRecords moto3TopSpeedRecord}) {
     return _Circuit(
       uid: uid,
       name: name,
@@ -95,12 +95,12 @@ mixin _$Circuit {
   String get trackLongestStraight;
   String get trackCornerLeft;
   String get trackCornerRight;
-  CircuitStats get motogpMostWins;
-  CircuitStats get moto2MostWins;
-  CircuitStats get moto3MostWins;
-  CircuitStats get motogpMostPoles;
-  CircuitStats get moto2MostPoles;
-  CircuitStats get moto3MostPoles;
+  List<CircuitStats> get motogpMostWins;
+  List<CircuitStats> get moto2MostWins;
+  List<CircuitStats> get moto3MostWins;
+  List<CircuitStats> get motogpMostPoles;
+  List<CircuitStats> get moto2MostPoles;
+  List<CircuitStats> get moto3MostPoles;
   CircuitRecords get motogpEverLapRecord;
   CircuitRecords get motogpRaceLapRecord;
   CircuitRecords get motogpBestPoleRecord;
@@ -133,12 +133,12 @@ abstract class $CircuitCopyWith<$Res> {
       String trackLongestStraight,
       String trackCornerLeft,
       String trackCornerRight,
-      CircuitStats motogpMostWins,
-      CircuitStats moto2MostWins,
-      CircuitStats moto3MostWins,
-      CircuitStats motogpMostPoles,
-      CircuitStats moto2MostPoles,
-      CircuitStats moto3MostPoles,
+      List<CircuitStats> motogpMostWins,
+      List<CircuitStats> moto2MostWins,
+      List<CircuitStats> moto3MostWins,
+      List<CircuitStats> motogpMostPoles,
+      List<CircuitStats> moto2MostPoles,
+      List<CircuitStats> moto3MostPoles,
       CircuitRecords motogpEverLapRecord,
       CircuitRecords motogpRaceLapRecord,
       CircuitRecords motogpBestPoleRecord,
@@ -152,12 +152,6 @@ abstract class $CircuitCopyWith<$Res> {
       CircuitRecords moto3BestPoleRecord,
       CircuitRecords moto3TopSpeedRecord});
 
-  $CircuitStatsCopyWith<$Res> get motogpMostWins;
-  $CircuitStatsCopyWith<$Res> get moto2MostWins;
-  $CircuitStatsCopyWith<$Res> get moto3MostWins;
-  $CircuitStatsCopyWith<$Res> get motogpMostPoles;
-  $CircuitStatsCopyWith<$Res> get moto2MostPoles;
-  $CircuitStatsCopyWith<$Res> get moto3MostPoles;
   $CircuitRecordsCopyWith<$Res> get motogpEverLapRecord;
   $CircuitRecordsCopyWith<$Res> get motogpRaceLapRecord;
   $CircuitRecordsCopyWith<$Res> get motogpBestPoleRecord;
@@ -237,22 +231,22 @@ class _$CircuitCopyWithImpl<$Res> implements $CircuitCopyWith<$Res> {
           : trackCornerRight as String,
       motogpMostWins: motogpMostWins == freezed
           ? _value.motogpMostWins
-          : motogpMostWins as CircuitStats,
+          : motogpMostWins as List<CircuitStats>,
       moto2MostWins: moto2MostWins == freezed
           ? _value.moto2MostWins
-          : moto2MostWins as CircuitStats,
+          : moto2MostWins as List<CircuitStats>,
       moto3MostWins: moto3MostWins == freezed
           ? _value.moto3MostWins
-          : moto3MostWins as CircuitStats,
+          : moto3MostWins as List<CircuitStats>,
       motogpMostPoles: motogpMostPoles == freezed
           ? _value.motogpMostPoles
-          : motogpMostPoles as CircuitStats,
+          : motogpMostPoles as List<CircuitStats>,
       moto2MostPoles: moto2MostPoles == freezed
           ? _value.moto2MostPoles
-          : moto2MostPoles as CircuitStats,
+          : moto2MostPoles as List<CircuitStats>,
       moto3MostPoles: moto3MostPoles == freezed
           ? _value.moto3MostPoles
-          : moto3MostPoles as CircuitStats,
+          : moto3MostPoles as List<CircuitStats>,
       motogpEverLapRecord: motogpEverLapRecord == freezed
           ? _value.motogpEverLapRecord
           : motogpEverLapRecord as CircuitRecords,
@@ -290,66 +284,6 @@ class _$CircuitCopyWithImpl<$Res> implements $CircuitCopyWith<$Res> {
           ? _value.moto3TopSpeedRecord
           : moto3TopSpeedRecord as CircuitRecords,
     ));
-  }
-
-  @override
-  $CircuitStatsCopyWith<$Res> get motogpMostWins {
-    if (_value.motogpMostWins == null) {
-      return null;
-    }
-    return $CircuitStatsCopyWith<$Res>(_value.motogpMostWins, (value) {
-      return _then(_value.copyWith(motogpMostWins: value));
-    });
-  }
-
-  @override
-  $CircuitStatsCopyWith<$Res> get moto2MostWins {
-    if (_value.moto2MostWins == null) {
-      return null;
-    }
-    return $CircuitStatsCopyWith<$Res>(_value.moto2MostWins, (value) {
-      return _then(_value.copyWith(moto2MostWins: value));
-    });
-  }
-
-  @override
-  $CircuitStatsCopyWith<$Res> get moto3MostWins {
-    if (_value.moto3MostWins == null) {
-      return null;
-    }
-    return $CircuitStatsCopyWith<$Res>(_value.moto3MostWins, (value) {
-      return _then(_value.copyWith(moto3MostWins: value));
-    });
-  }
-
-  @override
-  $CircuitStatsCopyWith<$Res> get motogpMostPoles {
-    if (_value.motogpMostPoles == null) {
-      return null;
-    }
-    return $CircuitStatsCopyWith<$Res>(_value.motogpMostPoles, (value) {
-      return _then(_value.copyWith(motogpMostPoles: value));
-    });
-  }
-
-  @override
-  $CircuitStatsCopyWith<$Res> get moto2MostPoles {
-    if (_value.moto2MostPoles == null) {
-      return null;
-    }
-    return $CircuitStatsCopyWith<$Res>(_value.moto2MostPoles, (value) {
-      return _then(_value.copyWith(moto2MostPoles: value));
-    });
-  }
-
-  @override
-  $CircuitStatsCopyWith<$Res> get moto3MostPoles {
-    if (_value.moto3MostPoles == null) {
-      return null;
-    }
-    return $CircuitStatsCopyWith<$Res>(_value.moto3MostPoles, (value) {
-      return _then(_value.copyWith(moto3MostPoles: value));
-    });
   }
 
   @override
@@ -490,12 +424,12 @@ abstract class _$CircuitCopyWith<$Res> implements $CircuitCopyWith<$Res> {
       String trackLongestStraight,
       String trackCornerLeft,
       String trackCornerRight,
-      CircuitStats motogpMostWins,
-      CircuitStats moto2MostWins,
-      CircuitStats moto3MostWins,
-      CircuitStats motogpMostPoles,
-      CircuitStats moto2MostPoles,
-      CircuitStats moto3MostPoles,
+      List<CircuitStats> motogpMostWins,
+      List<CircuitStats> moto2MostWins,
+      List<CircuitStats> moto3MostWins,
+      List<CircuitStats> motogpMostPoles,
+      List<CircuitStats> moto2MostPoles,
+      List<CircuitStats> moto3MostPoles,
       CircuitRecords motogpEverLapRecord,
       CircuitRecords motogpRaceLapRecord,
       CircuitRecords motogpBestPoleRecord,
@@ -509,18 +443,6 @@ abstract class _$CircuitCopyWith<$Res> implements $CircuitCopyWith<$Res> {
       CircuitRecords moto3BestPoleRecord,
       CircuitRecords moto3TopSpeedRecord});
 
-  @override
-  $CircuitStatsCopyWith<$Res> get motogpMostWins;
-  @override
-  $CircuitStatsCopyWith<$Res> get moto2MostWins;
-  @override
-  $CircuitStatsCopyWith<$Res> get moto3MostWins;
-  @override
-  $CircuitStatsCopyWith<$Res> get motogpMostPoles;
-  @override
-  $CircuitStatsCopyWith<$Res> get moto2MostPoles;
-  @override
-  $CircuitStatsCopyWith<$Res> get moto3MostPoles;
   @override
   $CircuitRecordsCopyWith<$Res> get motogpEverLapRecord;
   @override
@@ -613,22 +535,22 @@ class __$CircuitCopyWithImpl<$Res> extends _$CircuitCopyWithImpl<$Res>
           : trackCornerRight as String,
       motogpMostWins: motogpMostWins == freezed
           ? _value.motogpMostWins
-          : motogpMostWins as CircuitStats,
+          : motogpMostWins as List<CircuitStats>,
       moto2MostWins: moto2MostWins == freezed
           ? _value.moto2MostWins
-          : moto2MostWins as CircuitStats,
+          : moto2MostWins as List<CircuitStats>,
       moto3MostWins: moto3MostWins == freezed
           ? _value.moto3MostWins
-          : moto3MostWins as CircuitStats,
+          : moto3MostWins as List<CircuitStats>,
       motogpMostPoles: motogpMostPoles == freezed
           ? _value.motogpMostPoles
-          : motogpMostPoles as CircuitStats,
+          : motogpMostPoles as List<CircuitStats>,
       moto2MostPoles: moto2MostPoles == freezed
           ? _value.moto2MostPoles
-          : moto2MostPoles as CircuitStats,
+          : moto2MostPoles as List<CircuitStats>,
       moto3MostPoles: moto3MostPoles == freezed
           ? _value.moto3MostPoles
-          : moto3MostPoles as CircuitStats,
+          : moto3MostPoles as List<CircuitStats>,
       motogpEverLapRecord: motogpEverLapRecord == freezed
           ? _value.motogpEverLapRecord
           : motogpEverLapRecord as CircuitRecords,
@@ -689,18 +611,18 @@ class _$_Circuit extends _Circuit {
       @required this.motogpMostPoles,
       @required this.moto2MostPoles,
       @required this.moto3MostPoles,
-      @required this.motogpEverLapRecord,
-      @required this.motogpRaceLapRecord,
-      @required this.motogpBestPoleRecord,
-      @required this.motogpTopSpeedRecord,
-      @required this.moto2EverLapRecord,
-      @required this.moto2RaceLapRecord,
-      @required this.moto2BestPoleRecord,
-      @required this.moto2TopSpeedRecord,
-      @required this.moto3EverLapRecord,
-      @required this.moto3RaceLapRecord,
-      @required this.moto3BestPoleRecord,
-      @required this.moto3TopSpeedRecord})
+      this.motogpEverLapRecord,
+      this.motogpRaceLapRecord,
+      this.motogpBestPoleRecord,
+      this.motogpTopSpeedRecord,
+      this.moto2EverLapRecord,
+      this.moto2RaceLapRecord,
+      this.moto2BestPoleRecord,
+      this.moto2TopSpeedRecord,
+      this.moto3EverLapRecord,
+      this.moto3RaceLapRecord,
+      this.moto3BestPoleRecord,
+      this.moto3TopSpeedRecord})
       : assert(uid != null),
         assert(name != null),
         assert(nation != null),
@@ -719,18 +641,6 @@ class _$_Circuit extends _Circuit {
         assert(motogpMostPoles != null),
         assert(moto2MostPoles != null),
         assert(moto3MostPoles != null),
-        assert(motogpEverLapRecord != null),
-        assert(motogpRaceLapRecord != null),
-        assert(motogpBestPoleRecord != null),
-        assert(motogpTopSpeedRecord != null),
-        assert(moto2EverLapRecord != null),
-        assert(moto2RaceLapRecord != null),
-        assert(moto2BestPoleRecord != null),
-        assert(moto2TopSpeedRecord != null),
-        assert(moto3EverLapRecord != null),
-        assert(moto3RaceLapRecord != null),
-        assert(moto3BestPoleRecord != null),
-        assert(moto3TopSpeedRecord != null),
         super._();
 
   @override
@@ -758,17 +668,17 @@ class _$_Circuit extends _Circuit {
   @override
   final String trackCornerRight;
   @override
-  final CircuitStats motogpMostWins;
+  final List<CircuitStats> motogpMostWins;
   @override
-  final CircuitStats moto2MostWins;
+  final List<CircuitStats> moto2MostWins;
   @override
-  final CircuitStats moto3MostWins;
+  final List<CircuitStats> moto3MostWins;
   @override
-  final CircuitStats motogpMostPoles;
+  final List<CircuitStats> motogpMostPoles;
   @override
-  final CircuitStats moto2MostPoles;
+  final List<CircuitStats> moto2MostPoles;
   @override
-  final CircuitStats moto3MostPoles;
+  final List<CircuitStats> moto3MostPoles;
   @override
   final CircuitRecords motogpEverLapRecord;
   @override
@@ -931,24 +841,24 @@ abstract class _Circuit extends Circuit {
       @required String trackLongestStraight,
       @required String trackCornerLeft,
       @required String trackCornerRight,
-      @required CircuitStats motogpMostWins,
-      @required CircuitStats moto2MostWins,
-      @required CircuitStats moto3MostWins,
-      @required CircuitStats motogpMostPoles,
-      @required CircuitStats moto2MostPoles,
-      @required CircuitStats moto3MostPoles,
-      @required CircuitRecords motogpEverLapRecord,
-      @required CircuitRecords motogpRaceLapRecord,
-      @required CircuitRecords motogpBestPoleRecord,
-      @required CircuitRecords motogpTopSpeedRecord,
-      @required CircuitRecords moto2EverLapRecord,
-      @required CircuitRecords moto2RaceLapRecord,
-      @required CircuitRecords moto2BestPoleRecord,
-      @required CircuitRecords moto2TopSpeedRecord,
-      @required CircuitRecords moto3EverLapRecord,
-      @required CircuitRecords moto3RaceLapRecord,
-      @required CircuitRecords moto3BestPoleRecord,
-      @required CircuitRecords moto3TopSpeedRecord}) = _$_Circuit;
+      @required List<CircuitStats> motogpMostWins,
+      @required List<CircuitStats> moto2MostWins,
+      @required List<CircuitStats> moto3MostWins,
+      @required List<CircuitStats> motogpMostPoles,
+      @required List<CircuitStats> moto2MostPoles,
+      @required List<CircuitStats> moto3MostPoles,
+      CircuitRecords motogpEverLapRecord,
+      CircuitRecords motogpRaceLapRecord,
+      CircuitRecords motogpBestPoleRecord,
+      CircuitRecords motogpTopSpeedRecord,
+      CircuitRecords moto2EverLapRecord,
+      CircuitRecords moto2RaceLapRecord,
+      CircuitRecords moto2BestPoleRecord,
+      CircuitRecords moto2TopSpeedRecord,
+      CircuitRecords moto3EverLapRecord,
+      CircuitRecords moto3RaceLapRecord,
+      CircuitRecords moto3BestPoleRecord,
+      CircuitRecords moto3TopSpeedRecord}) = _$_Circuit;
 
   @override
   UniqueID get uid;
@@ -975,17 +885,17 @@ abstract class _Circuit extends Circuit {
   @override
   String get trackCornerRight;
   @override
-  CircuitStats get motogpMostWins;
+  List<CircuitStats> get motogpMostWins;
   @override
-  CircuitStats get moto2MostWins;
+  List<CircuitStats> get moto2MostWins;
   @override
-  CircuitStats get moto3MostWins;
+  List<CircuitStats> get moto3MostWins;
   @override
-  CircuitStats get motogpMostPoles;
+  List<CircuitStats> get motogpMostPoles;
   @override
-  CircuitStats get moto2MostPoles;
+  List<CircuitStats> get moto2MostPoles;
   @override
-  CircuitStats get moto3MostPoles;
+  List<CircuitStats> get moto3MostPoles;
   @override
   CircuitRecords get motogpEverLapRecord;
   @override

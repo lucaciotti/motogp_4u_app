@@ -19,7 +19,7 @@ class _$CircuitStatsDtoTearOff {
   _CircuitStatsDto call(
       {@JsonKey(name: 'rider_name') String riderName,
       @JsonKey(name: 'rider_num') String riderNum,
-      @JsonKey(name: 'value') int value}) {
+      @JsonKey(name: 'value') String value}) {
     return _CircuitStatsDto(
       riderName: riderName,
       riderNum: riderNum,
@@ -37,7 +37,7 @@ mixin _$CircuitStatsDto {
   @JsonKey(name: 'rider_num')
   String get riderNum;
   @JsonKey(name: 'value')
-  int get value;
+  String get value;
 
   Map<String, dynamic> toJson();
   $CircuitStatsDtoCopyWith<CircuitStatsDto> get copyWith;
@@ -50,7 +50,7 @@ abstract class $CircuitStatsDtoCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'rider_name') String riderName,
       @JsonKey(name: 'rider_num') String riderNum,
-      @JsonKey(name: 'value') int value});
+      @JsonKey(name: 'value') String value});
 }
 
 class _$CircuitStatsDtoCopyWithImpl<$Res>
@@ -70,7 +70,7 @@ class _$CircuitStatsDtoCopyWithImpl<$Res>
     return _then(_value.copyWith(
       riderName: riderName == freezed ? _value.riderName : riderName as String,
       riderNum: riderNum == freezed ? _value.riderNum : riderNum as String,
-      value: value == freezed ? _value.value : value as int,
+      value: value == freezed ? _value.value : value as String,
     ));
   }
 }
@@ -84,7 +84,7 @@ abstract class _$CircuitStatsDtoCopyWith<$Res>
   $Res call(
       {@JsonKey(name: 'rider_name') String riderName,
       @JsonKey(name: 'rider_num') String riderNum,
-      @JsonKey(name: 'value') int value});
+      @JsonKey(name: 'value') String value});
 }
 
 class __$CircuitStatsDtoCopyWithImpl<$Res>
@@ -106,7 +106,7 @@ class __$CircuitStatsDtoCopyWithImpl<$Res>
     return _then(_CircuitStatsDto(
       riderName: riderName == freezed ? _value.riderName : riderName as String,
       riderNum: riderNum == freezed ? _value.riderNum : riderNum as String,
-      value: value == freezed ? _value.value : value as int,
+      value: value == freezed ? _value.value : value as String,
     ));
   }
 }
@@ -130,7 +130,7 @@ class _$_CircuitStatsDto extends _CircuitStatsDto {
   final String riderNum;
   @override
   @JsonKey(name: 'value')
-  final int value;
+  final String value;
 
   @override
   String toString() {
@@ -173,7 +173,7 @@ abstract class _CircuitStatsDto extends CircuitStatsDto {
   const factory _CircuitStatsDto(
       {@JsonKey(name: 'rider_name') String riderName,
       @JsonKey(name: 'rider_num') String riderNum,
-      @JsonKey(name: 'value') int value}) = _$_CircuitStatsDto;
+      @JsonKey(name: 'value') String value}) = _$_CircuitStatsDto;
 
   factory _CircuitStatsDto.fromJson(Map<String, dynamic> json) =
       _$_CircuitStatsDto.fromJson;
@@ -186,7 +186,7 @@ abstract class _CircuitStatsDto extends CircuitStatsDto {
   String get riderNum;
   @override
   @JsonKey(name: 'value')
-  int get value;
+  String get value;
   @override
   _$CircuitStatsDtoCopyWith<_CircuitStatsDto> get copyWith;
 }

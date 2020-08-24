@@ -410,3 +410,420 @@ abstract class _CircuitRecordsValueDto extends CircuitRecordsValueDto {
   @override
   _$CircuitRecordsValueDtoCopyWith<_CircuitRecordsValueDto> get copyWith;
 }
+
+CategoryCircuitRecordsDto _$CategoryCircuitRecordsDtoFromJson(
+    Map<String, dynamic> json) {
+  return _CategoryCircuitRecordsDto.fromJson(json);
+}
+
+class _$CategoryCircuitRecordsDtoTearOff {
+  const _$CategoryCircuitRecordsDtoTearOff();
+
+// ignore: unused_element
+  _CategoryCircuitRecordsDto call(
+      {@JsonKey(name: 'all_time_lap_record') CircuitRecordsDto allTimeRecord,
+      @JsonKey(name: 'best_race_lap') CircuitRecordsDto bestRaceRecord,
+      @JsonKey(name: 'best_pole') CircuitRecordsDto bestPoleRecord,
+      @JsonKey(name: 'top_speed') CircuitRecordsDto topSpeedRecord}) {
+    return _CategoryCircuitRecordsDto(
+      allTimeRecord: allTimeRecord,
+      bestRaceRecord: bestRaceRecord,
+      bestPoleRecord: bestPoleRecord,
+      topSpeedRecord: topSpeedRecord,
+    );
+  }
+}
+
+// ignore: unused_element
+const $CategoryCircuitRecordsDto = _$CategoryCircuitRecordsDtoTearOff();
+
+mixin _$CategoryCircuitRecordsDto {
+  @JsonKey(name: 'all_time_lap_record')
+  CircuitRecordsDto get allTimeRecord;
+  @JsonKey(name: 'best_race_lap')
+  CircuitRecordsDto get bestRaceRecord;
+  @JsonKey(name: 'best_pole')
+  CircuitRecordsDto get bestPoleRecord;
+  @JsonKey(name: 'top_speed')
+  CircuitRecordsDto get topSpeedRecord;
+
+  Map<String, dynamic> toJson();
+  $CategoryCircuitRecordsDtoCopyWith<CategoryCircuitRecordsDto> get copyWith;
+}
+
+abstract class $CategoryCircuitRecordsDtoCopyWith<$Res> {
+  factory $CategoryCircuitRecordsDtoCopyWith(CategoryCircuitRecordsDto value,
+          $Res Function(CategoryCircuitRecordsDto) then) =
+      _$CategoryCircuitRecordsDtoCopyWithImpl<$Res>;
+  $Res call(
+      {@JsonKey(name: 'all_time_lap_record') CircuitRecordsDto allTimeRecord,
+      @JsonKey(name: 'best_race_lap') CircuitRecordsDto bestRaceRecord,
+      @JsonKey(name: 'best_pole') CircuitRecordsDto bestPoleRecord,
+      @JsonKey(name: 'top_speed') CircuitRecordsDto topSpeedRecord});
+
+  $CircuitRecordsDtoCopyWith<$Res> get allTimeRecord;
+  $CircuitRecordsDtoCopyWith<$Res> get bestRaceRecord;
+  $CircuitRecordsDtoCopyWith<$Res> get bestPoleRecord;
+  $CircuitRecordsDtoCopyWith<$Res> get topSpeedRecord;
+}
+
+class _$CategoryCircuitRecordsDtoCopyWithImpl<$Res>
+    implements $CategoryCircuitRecordsDtoCopyWith<$Res> {
+  _$CategoryCircuitRecordsDtoCopyWithImpl(this._value, this._then);
+
+  final CategoryCircuitRecordsDto _value;
+  // ignore: unused_field
+  final $Res Function(CategoryCircuitRecordsDto) _then;
+
+  @override
+  $Res call({
+    Object allTimeRecord = freezed,
+    Object bestRaceRecord = freezed,
+    Object bestPoleRecord = freezed,
+    Object topSpeedRecord = freezed,
+  }) {
+    return _then(_value.copyWith(
+      allTimeRecord: allTimeRecord == freezed
+          ? _value.allTimeRecord
+          : allTimeRecord as CircuitRecordsDto,
+      bestRaceRecord: bestRaceRecord == freezed
+          ? _value.bestRaceRecord
+          : bestRaceRecord as CircuitRecordsDto,
+      bestPoleRecord: bestPoleRecord == freezed
+          ? _value.bestPoleRecord
+          : bestPoleRecord as CircuitRecordsDto,
+      topSpeedRecord: topSpeedRecord == freezed
+          ? _value.topSpeedRecord
+          : topSpeedRecord as CircuitRecordsDto,
+    ));
+  }
+
+  @override
+  $CircuitRecordsDtoCopyWith<$Res> get allTimeRecord {
+    if (_value.allTimeRecord == null) {
+      return null;
+    }
+    return $CircuitRecordsDtoCopyWith<$Res>(_value.allTimeRecord, (value) {
+      return _then(_value.copyWith(allTimeRecord: value));
+    });
+  }
+
+  @override
+  $CircuitRecordsDtoCopyWith<$Res> get bestRaceRecord {
+    if (_value.bestRaceRecord == null) {
+      return null;
+    }
+    return $CircuitRecordsDtoCopyWith<$Res>(_value.bestRaceRecord, (value) {
+      return _then(_value.copyWith(bestRaceRecord: value));
+    });
+  }
+
+  @override
+  $CircuitRecordsDtoCopyWith<$Res> get bestPoleRecord {
+    if (_value.bestPoleRecord == null) {
+      return null;
+    }
+    return $CircuitRecordsDtoCopyWith<$Res>(_value.bestPoleRecord, (value) {
+      return _then(_value.copyWith(bestPoleRecord: value));
+    });
+  }
+
+  @override
+  $CircuitRecordsDtoCopyWith<$Res> get topSpeedRecord {
+    if (_value.topSpeedRecord == null) {
+      return null;
+    }
+    return $CircuitRecordsDtoCopyWith<$Res>(_value.topSpeedRecord, (value) {
+      return _then(_value.copyWith(topSpeedRecord: value));
+    });
+  }
+}
+
+abstract class _$CategoryCircuitRecordsDtoCopyWith<$Res>
+    implements $CategoryCircuitRecordsDtoCopyWith<$Res> {
+  factory _$CategoryCircuitRecordsDtoCopyWith(_CategoryCircuitRecordsDto value,
+          $Res Function(_CategoryCircuitRecordsDto) then) =
+      __$CategoryCircuitRecordsDtoCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {@JsonKey(name: 'all_time_lap_record') CircuitRecordsDto allTimeRecord,
+      @JsonKey(name: 'best_race_lap') CircuitRecordsDto bestRaceRecord,
+      @JsonKey(name: 'best_pole') CircuitRecordsDto bestPoleRecord,
+      @JsonKey(name: 'top_speed') CircuitRecordsDto topSpeedRecord});
+
+  @override
+  $CircuitRecordsDtoCopyWith<$Res> get allTimeRecord;
+  @override
+  $CircuitRecordsDtoCopyWith<$Res> get bestRaceRecord;
+  @override
+  $CircuitRecordsDtoCopyWith<$Res> get bestPoleRecord;
+  @override
+  $CircuitRecordsDtoCopyWith<$Res> get topSpeedRecord;
+}
+
+class __$CategoryCircuitRecordsDtoCopyWithImpl<$Res>
+    extends _$CategoryCircuitRecordsDtoCopyWithImpl<$Res>
+    implements _$CategoryCircuitRecordsDtoCopyWith<$Res> {
+  __$CategoryCircuitRecordsDtoCopyWithImpl(_CategoryCircuitRecordsDto _value,
+      $Res Function(_CategoryCircuitRecordsDto) _then)
+      : super(_value, (v) => _then(v as _CategoryCircuitRecordsDto));
+
+  @override
+  _CategoryCircuitRecordsDto get _value =>
+      super._value as _CategoryCircuitRecordsDto;
+
+  @override
+  $Res call({
+    Object allTimeRecord = freezed,
+    Object bestRaceRecord = freezed,
+    Object bestPoleRecord = freezed,
+    Object topSpeedRecord = freezed,
+  }) {
+    return _then(_CategoryCircuitRecordsDto(
+      allTimeRecord: allTimeRecord == freezed
+          ? _value.allTimeRecord
+          : allTimeRecord as CircuitRecordsDto,
+      bestRaceRecord: bestRaceRecord == freezed
+          ? _value.bestRaceRecord
+          : bestRaceRecord as CircuitRecordsDto,
+      bestPoleRecord: bestPoleRecord == freezed
+          ? _value.bestPoleRecord
+          : bestPoleRecord as CircuitRecordsDto,
+      topSpeedRecord: topSpeedRecord == freezed
+          ? _value.topSpeedRecord
+          : topSpeedRecord as CircuitRecordsDto,
+    ));
+  }
+}
+
+@JsonSerializable()
+class _$_CategoryCircuitRecordsDto implements _CategoryCircuitRecordsDto {
+  const _$_CategoryCircuitRecordsDto(
+      {@JsonKey(name: 'all_time_lap_record') this.allTimeRecord,
+      @JsonKey(name: 'best_race_lap') this.bestRaceRecord,
+      @JsonKey(name: 'best_pole') this.bestPoleRecord,
+      @JsonKey(name: 'top_speed') this.topSpeedRecord});
+
+  factory _$_CategoryCircuitRecordsDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_CategoryCircuitRecordsDtoFromJson(json);
+
+  @override
+  @JsonKey(name: 'all_time_lap_record')
+  final CircuitRecordsDto allTimeRecord;
+  @override
+  @JsonKey(name: 'best_race_lap')
+  final CircuitRecordsDto bestRaceRecord;
+  @override
+  @JsonKey(name: 'best_pole')
+  final CircuitRecordsDto bestPoleRecord;
+  @override
+  @JsonKey(name: 'top_speed')
+  final CircuitRecordsDto topSpeedRecord;
+
+  @override
+  String toString() {
+    return 'CategoryCircuitRecordsDto(allTimeRecord: $allTimeRecord, bestRaceRecord: $bestRaceRecord, bestPoleRecord: $bestPoleRecord, topSpeedRecord: $topSpeedRecord)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _CategoryCircuitRecordsDto &&
+            (identical(other.allTimeRecord, allTimeRecord) ||
+                const DeepCollectionEquality()
+                    .equals(other.allTimeRecord, allTimeRecord)) &&
+            (identical(other.bestRaceRecord, bestRaceRecord) ||
+                const DeepCollectionEquality()
+                    .equals(other.bestRaceRecord, bestRaceRecord)) &&
+            (identical(other.bestPoleRecord, bestPoleRecord) ||
+                const DeepCollectionEquality()
+                    .equals(other.bestPoleRecord, bestPoleRecord)) &&
+            (identical(other.topSpeedRecord, topSpeedRecord) ||
+                const DeepCollectionEquality()
+                    .equals(other.topSpeedRecord, topSpeedRecord)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(allTimeRecord) ^
+      const DeepCollectionEquality().hash(bestRaceRecord) ^
+      const DeepCollectionEquality().hash(bestPoleRecord) ^
+      const DeepCollectionEquality().hash(topSpeedRecord);
+
+  @override
+  _$CategoryCircuitRecordsDtoCopyWith<_CategoryCircuitRecordsDto>
+      get copyWith =>
+          __$CategoryCircuitRecordsDtoCopyWithImpl<_CategoryCircuitRecordsDto>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_CategoryCircuitRecordsDtoToJson(this);
+  }
+}
+
+abstract class _CategoryCircuitRecordsDto implements CategoryCircuitRecordsDto {
+  const factory _CategoryCircuitRecordsDto(
+      {@JsonKey(name: 'all_time_lap_record')
+          CircuitRecordsDto allTimeRecord,
+      @JsonKey(name: 'best_race_lap')
+          CircuitRecordsDto bestRaceRecord,
+      @JsonKey(name: 'best_pole')
+          CircuitRecordsDto bestPoleRecord,
+      @JsonKey(name: 'top_speed')
+          CircuitRecordsDto topSpeedRecord}) = _$_CategoryCircuitRecordsDto;
+
+  factory _CategoryCircuitRecordsDto.fromJson(Map<String, dynamic> json) =
+      _$_CategoryCircuitRecordsDto.fromJson;
+
+  @override
+  @JsonKey(name: 'all_time_lap_record')
+  CircuitRecordsDto get allTimeRecord;
+  @override
+  @JsonKey(name: 'best_race_lap')
+  CircuitRecordsDto get bestRaceRecord;
+  @override
+  @JsonKey(name: 'best_pole')
+  CircuitRecordsDto get bestPoleRecord;
+  @override
+  @JsonKey(name: 'top_speed')
+  CircuitRecordsDto get topSpeedRecord;
+  @override
+  _$CategoryCircuitRecordsDtoCopyWith<_CategoryCircuitRecordsDto> get copyWith;
+}
+
+MapCircuitRecordsDto _$MapCircuitRecordsDtoFromJson(Map<String, dynamic> json) {
+  return _MapCircuitRecordsDto.fromJson(json);
+}
+
+class _$MapCircuitRecordsDtoTearOff {
+  const _$MapCircuitRecordsDtoTearOff();
+
+// ignore: unused_element
+  _MapCircuitRecordsDto call({Map<String, CircuitRecordsDto> namedRecord}) {
+    return _MapCircuitRecordsDto(
+      namedRecord: namedRecord,
+    );
+  }
+}
+
+// ignore: unused_element
+const $MapCircuitRecordsDto = _$MapCircuitRecordsDtoTearOff();
+
+mixin _$MapCircuitRecordsDto {
+  Map<String, CircuitRecordsDto> get namedRecord;
+
+  Map<String, dynamic> toJson();
+  $MapCircuitRecordsDtoCopyWith<MapCircuitRecordsDto> get copyWith;
+}
+
+abstract class $MapCircuitRecordsDtoCopyWith<$Res> {
+  factory $MapCircuitRecordsDtoCopyWith(MapCircuitRecordsDto value,
+          $Res Function(MapCircuitRecordsDto) then) =
+      _$MapCircuitRecordsDtoCopyWithImpl<$Res>;
+  $Res call({Map<String, CircuitRecordsDto> namedRecord});
+}
+
+class _$MapCircuitRecordsDtoCopyWithImpl<$Res>
+    implements $MapCircuitRecordsDtoCopyWith<$Res> {
+  _$MapCircuitRecordsDtoCopyWithImpl(this._value, this._then);
+
+  final MapCircuitRecordsDto _value;
+  // ignore: unused_field
+  final $Res Function(MapCircuitRecordsDto) _then;
+
+  @override
+  $Res call({
+    Object namedRecord = freezed,
+  }) {
+    return _then(_value.copyWith(
+      namedRecord: namedRecord == freezed
+          ? _value.namedRecord
+          : namedRecord as Map<String, CircuitRecordsDto>,
+    ));
+  }
+}
+
+abstract class _$MapCircuitRecordsDtoCopyWith<$Res>
+    implements $MapCircuitRecordsDtoCopyWith<$Res> {
+  factory _$MapCircuitRecordsDtoCopyWith(_MapCircuitRecordsDto value,
+          $Res Function(_MapCircuitRecordsDto) then) =
+      __$MapCircuitRecordsDtoCopyWithImpl<$Res>;
+  @override
+  $Res call({Map<String, CircuitRecordsDto> namedRecord});
+}
+
+class __$MapCircuitRecordsDtoCopyWithImpl<$Res>
+    extends _$MapCircuitRecordsDtoCopyWithImpl<$Res>
+    implements _$MapCircuitRecordsDtoCopyWith<$Res> {
+  __$MapCircuitRecordsDtoCopyWithImpl(
+      _MapCircuitRecordsDto _value, $Res Function(_MapCircuitRecordsDto) _then)
+      : super(_value, (v) => _then(v as _MapCircuitRecordsDto));
+
+  @override
+  _MapCircuitRecordsDto get _value => super._value as _MapCircuitRecordsDto;
+
+  @override
+  $Res call({
+    Object namedRecord = freezed,
+  }) {
+    return _then(_MapCircuitRecordsDto(
+      namedRecord: namedRecord == freezed
+          ? _value.namedRecord
+          : namedRecord as Map<String, CircuitRecordsDto>,
+    ));
+  }
+}
+
+@JsonSerializable()
+class _$_MapCircuitRecordsDto implements _MapCircuitRecordsDto {
+  const _$_MapCircuitRecordsDto({this.namedRecord});
+
+  factory _$_MapCircuitRecordsDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_MapCircuitRecordsDtoFromJson(json);
+
+  @override
+  final Map<String, CircuitRecordsDto> namedRecord;
+
+  @override
+  String toString() {
+    return 'MapCircuitRecordsDto(namedRecord: $namedRecord)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _MapCircuitRecordsDto &&
+            (identical(other.namedRecord, namedRecord) ||
+                const DeepCollectionEquality()
+                    .equals(other.namedRecord, namedRecord)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(namedRecord);
+
+  @override
+  _$MapCircuitRecordsDtoCopyWith<_MapCircuitRecordsDto> get copyWith =>
+      __$MapCircuitRecordsDtoCopyWithImpl<_MapCircuitRecordsDto>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_MapCircuitRecordsDtoToJson(this);
+  }
+}
+
+abstract class _MapCircuitRecordsDto implements MapCircuitRecordsDto {
+  const factory _MapCircuitRecordsDto(
+      {Map<String, CircuitRecordsDto> namedRecord}) = _$_MapCircuitRecordsDto;
+
+  factory _MapCircuitRecordsDto.fromJson(Map<String, dynamic> json) =
+      _$_MapCircuitRecordsDto.fromJson;
+
+  @override
+  Map<String, CircuitRecordsDto> get namedRecord;
+  @override
+  _$MapCircuitRecordsDtoCopyWith<_MapCircuitRecordsDto> get copyWith;
+}

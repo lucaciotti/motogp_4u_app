@@ -14,7 +14,7 @@ abstract class CircuitRecords with _$CircuitRecords implements IEntity {
     @required String riderNum,
     @required String riderTeam,
     @required String timeValue,
-    @required int speedValue,
+    @required double speedValue,
   }) = _CircuitRecords;
 
   const CircuitRecords._();

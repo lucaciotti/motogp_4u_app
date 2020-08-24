@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route_annotations.dart';
+import 'package:motogp_4u_app/ui/pages/circuit/circuit_info_page.dart';
 import 'package:motogp_4u_app/ui/pages/home/home_page.dart';
 
 @MaterialAutoRouter(
@@ -6,6 +7,7 @@ import 'package:motogp_4u_app/ui/pages/home/home_page.dart';
   routes: <AutoRoute>[
     // MaterialRoute(page: SplashPage, initial: true),
     MaterialRoute(page: HomePage, initial: true),
+    MaterialRoute(page: CircuitInfoPage),
     // MaterialRoute(page: SignInPage),
   ],
 )

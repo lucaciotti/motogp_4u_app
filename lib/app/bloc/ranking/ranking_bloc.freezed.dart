@@ -22,32 +22,10 @@ class _$RankingEventTearOff {
   }
 
 // ignore: unused_element
-  _CategoryChanged categoryChanged(
-      {String category, String esercizio, String eventName}) {
-    return _CategoryChanged(
-      category: category,
+  _OnChangeParameter onChangeParameter({String esercizio, String category}) {
+    return _OnChangeParameter(
       esercizio: esercizio,
-      eventName: eventName,
-    );
-  }
-
-// ignore: unused_element
-  _YearChanged yearChanged(
-      {String category, String esercizio, String eventName}) {
-    return _YearChanged(
       category: category,
-      esercizio: esercizio,
-      eventName: eventName,
-    );
-  }
-
-// ignore: unused_element
-  _EventChanged eventChanged(
-      {String category, String esercizio, String eventName}) {
-    return _EventChanged(
-      category: category,
-      esercizio: esercizio,
-      eventName: eventName,
     );
   }
 }
@@ -62,36 +40,23 @@ mixin _$RankingEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initFetchSeasonRanking(String esercizio, String category),
-    @required
-        Result categoryChanged(
-            String category, String esercizio, String eventName),
-    @required
-        Result yearChanged(String category, String esercizio, String eventName),
-    @required
-        Result eventChanged(
-            String category, String esercizio, String eventName),
+    @required Result onChangeParameter(String esercizio, String category),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initFetchSeasonRanking(String esercizio, String category),
-    Result categoryChanged(String category, String esercizio, String eventName),
-    Result yearChanged(String category, String esercizio, String eventName),
-    Result eventChanged(String category, String esercizio, String eventName),
+    Result onChangeParameter(String esercizio, String category),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initFetchSeasonRanking(_InitFetchSeasonRanking value),
-    @required Result categoryChanged(_CategoryChanged value),
-    @required Result yearChanged(_YearChanged value),
-    @required Result eventChanged(_EventChanged value),
+    @required Result onChangeParameter(_OnChangeParameter value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initFetchSeasonRanking(_InitFetchSeasonRanking value),
-    Result categoryChanged(_CategoryChanged value),
-    Result yearChanged(_YearChanged value),
-    Result eventChanged(_EventChanged value),
+    Result onChangeParameter(_OnChangeParameter value),
     @required Result orElse(),
   });
 
@@ -195,19 +160,10 @@ class _$_InitFetchSeasonRanking implements _InitFetchSeasonRanking {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initFetchSeasonRanking(String esercizio, String category),
-    @required
-        Result categoryChanged(
-            String category, String esercizio, String eventName),
-    @required
-        Result yearChanged(String category, String esercizio, String eventName),
-    @required
-        Result eventChanged(
-            String category, String esercizio, String eventName),
+    @required Result onChangeParameter(String esercizio, String category),
   }) {
     assert(initFetchSeasonRanking != null);
-    assert(categoryChanged != null);
-    assert(yearChanged != null);
-    assert(eventChanged != null);
+    assert(onChangeParameter != null);
     return initFetchSeasonRanking(esercizio, category);
   }
 
@@ -215,9 +171,7 @@ class _$_InitFetchSeasonRanking implements _InitFetchSeasonRanking {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initFetchSeasonRanking(String esercizio, String category),
-    Result categoryChanged(String category, String esercizio, String eventName),
-    Result yearChanged(String category, String esercizio, String eventName),
-    Result eventChanged(String category, String esercizio, String eventName),
+    Result onChangeParameter(String esercizio, String category),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -231,14 +185,10 @@ class _$_InitFetchSeasonRanking implements _InitFetchSeasonRanking {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initFetchSeasonRanking(_InitFetchSeasonRanking value),
-    @required Result categoryChanged(_CategoryChanged value),
-    @required Result yearChanged(_YearChanged value),
-    @required Result eventChanged(_EventChanged value),
+    @required Result onChangeParameter(_OnChangeParameter value),
   }) {
     assert(initFetchSeasonRanking != null);
-    assert(categoryChanged != null);
-    assert(yearChanged != null);
-    assert(eventChanged != null);
+    assert(onChangeParameter != null);
     return initFetchSeasonRanking(this);
   }
 
@@ -246,9 +196,7 @@ class _$_InitFetchSeasonRanking implements _InitFetchSeasonRanking {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initFetchSeasonRanking(_InitFetchSeasonRanking value),
-    Result categoryChanged(_CategoryChanged value),
-    Result yearChanged(_YearChanged value),
-    Result eventChanged(_EventChanged value),
+    Result onChangeParameter(_OnChangeParameter value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -271,112 +219,93 @@ abstract class _InitFetchSeasonRanking implements RankingEvent {
   _$InitFetchSeasonRankingCopyWith<_InitFetchSeasonRanking> get copyWith;
 }
 
-abstract class _$CategoryChangedCopyWith<$Res>
+abstract class _$OnChangeParameterCopyWith<$Res>
     implements $RankingEventCopyWith<$Res> {
-  factory _$CategoryChangedCopyWith(
-          _CategoryChanged value, $Res Function(_CategoryChanged) then) =
-      __$CategoryChangedCopyWithImpl<$Res>;
+  factory _$OnChangeParameterCopyWith(
+          _OnChangeParameter value, $Res Function(_OnChangeParameter) then) =
+      __$OnChangeParameterCopyWithImpl<$Res>;
   @override
-  $Res call({String category, String esercizio, String eventName});
+  $Res call({String esercizio, String category});
 }
 
-class __$CategoryChangedCopyWithImpl<$Res>
+class __$OnChangeParameterCopyWithImpl<$Res>
     extends _$RankingEventCopyWithImpl<$Res>
-    implements _$CategoryChangedCopyWith<$Res> {
-  __$CategoryChangedCopyWithImpl(
-      _CategoryChanged _value, $Res Function(_CategoryChanged) _then)
-      : super(_value, (v) => _then(v as _CategoryChanged));
+    implements _$OnChangeParameterCopyWith<$Res> {
+  __$OnChangeParameterCopyWithImpl(
+      _OnChangeParameter _value, $Res Function(_OnChangeParameter) _then)
+      : super(_value, (v) => _then(v as _OnChangeParameter));
 
   @override
-  _CategoryChanged get _value => super._value as _CategoryChanged;
+  _OnChangeParameter get _value => super._value as _OnChangeParameter;
 
   @override
   $Res call({
-    Object category = freezed,
     Object esercizio = freezed,
-    Object eventName = freezed,
+    Object category = freezed,
   }) {
-    return _then(_CategoryChanged(
-      category: category == freezed ? _value.category : category as String,
+    return _then(_OnChangeParameter(
       esercizio: esercizio == freezed ? _value.esercizio : esercizio as String,
-      eventName: eventName == freezed ? _value.eventName : eventName as String,
+      category: category == freezed ? _value.category : category as String,
     ));
   }
 }
 
-class _$_CategoryChanged implements _CategoryChanged {
-  const _$_CategoryChanged({this.category, this.esercizio, this.eventName});
+class _$_OnChangeParameter implements _OnChangeParameter {
+  const _$_OnChangeParameter({this.esercizio, this.category});
 
-  @override
-  final String category;
   @override
   final String esercizio;
   @override
-  final String eventName;
+  final String category;
 
   @override
   String toString() {
-    return 'RankingEvent.categoryChanged(category: $category, esercizio: $esercizio, eventName: $eventName)';
+    return 'RankingEvent.onChangeParameter(esercizio: $esercizio, category: $category)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CategoryChanged &&
-            (identical(other.category, category) ||
-                const DeepCollectionEquality()
-                    .equals(other.category, category)) &&
+        (other is _OnChangeParameter &&
             (identical(other.esercizio, esercizio) ||
                 const DeepCollectionEquality()
                     .equals(other.esercizio, esercizio)) &&
-            (identical(other.eventName, eventName) ||
+            (identical(other.category, category) ||
                 const DeepCollectionEquality()
-                    .equals(other.eventName, eventName)));
+                    .equals(other.category, category)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(category) ^
       const DeepCollectionEquality().hash(esercizio) ^
-      const DeepCollectionEquality().hash(eventName);
+      const DeepCollectionEquality().hash(category);
 
   @override
-  _$CategoryChangedCopyWith<_CategoryChanged> get copyWith =>
-      __$CategoryChangedCopyWithImpl<_CategoryChanged>(this, _$identity);
+  _$OnChangeParameterCopyWith<_OnChangeParameter> get copyWith =>
+      __$OnChangeParameterCopyWithImpl<_OnChangeParameter>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initFetchSeasonRanking(String esercizio, String category),
-    @required
-        Result categoryChanged(
-            String category, String esercizio, String eventName),
-    @required
-        Result yearChanged(String category, String esercizio, String eventName),
-    @required
-        Result eventChanged(
-            String category, String esercizio, String eventName),
+    @required Result onChangeParameter(String esercizio, String category),
   }) {
     assert(initFetchSeasonRanking != null);
-    assert(categoryChanged != null);
-    assert(yearChanged != null);
-    assert(eventChanged != null);
-    return categoryChanged(category, esercizio, eventName);
+    assert(onChangeParameter != null);
+    return onChangeParameter(esercizio, category);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initFetchSeasonRanking(String esercizio, String category),
-    Result categoryChanged(String category, String esercizio, String eventName),
-    Result yearChanged(String category, String esercizio, String eventName),
-    Result eventChanged(String category, String esercizio, String eventName),
+    Result onChangeParameter(String esercizio, String category),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (categoryChanged != null) {
-      return categoryChanged(category, esercizio, eventName);
+    if (onChangeParameter != null) {
+      return onChangeParameter(esercizio, category);
     }
     return orElse();
   }
@@ -385,355 +314,38 @@ class _$_CategoryChanged implements _CategoryChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initFetchSeasonRanking(_InitFetchSeasonRanking value),
-    @required Result categoryChanged(_CategoryChanged value),
-    @required Result yearChanged(_YearChanged value),
-    @required Result eventChanged(_EventChanged value),
+    @required Result onChangeParameter(_OnChangeParameter value),
   }) {
     assert(initFetchSeasonRanking != null);
-    assert(categoryChanged != null);
-    assert(yearChanged != null);
-    assert(eventChanged != null);
-    return categoryChanged(this);
+    assert(onChangeParameter != null);
+    return onChangeParameter(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initFetchSeasonRanking(_InitFetchSeasonRanking value),
-    Result categoryChanged(_CategoryChanged value),
-    Result yearChanged(_YearChanged value),
-    Result eventChanged(_EventChanged value),
+    Result onChangeParameter(_OnChangeParameter value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (categoryChanged != null) {
-      return categoryChanged(this);
+    if (onChangeParameter != null) {
+      return onChangeParameter(this);
     }
     return orElse();
   }
 }
 
-abstract class _CategoryChanged implements RankingEvent {
-  const factory _CategoryChanged(
-      {String category,
-      String esercizio,
-      String eventName}) = _$_CategoryChanged;
+abstract class _OnChangeParameter implements RankingEvent {
+  const factory _OnChangeParameter({String esercizio, String category}) =
+      _$_OnChangeParameter;
 
+  @override
+  String get esercizio;
   @override
   String get category;
   @override
-  String get esercizio;
-  String get eventName;
-  @override
-  _$CategoryChangedCopyWith<_CategoryChanged> get copyWith;
-}
-
-abstract class _$YearChangedCopyWith<$Res>
-    implements $RankingEventCopyWith<$Res> {
-  factory _$YearChangedCopyWith(
-          _YearChanged value, $Res Function(_YearChanged) then) =
-      __$YearChangedCopyWithImpl<$Res>;
-  @override
-  $Res call({String category, String esercizio, String eventName});
-}
-
-class __$YearChangedCopyWithImpl<$Res> extends _$RankingEventCopyWithImpl<$Res>
-    implements _$YearChangedCopyWith<$Res> {
-  __$YearChangedCopyWithImpl(
-      _YearChanged _value, $Res Function(_YearChanged) _then)
-      : super(_value, (v) => _then(v as _YearChanged));
-
-  @override
-  _YearChanged get _value => super._value as _YearChanged;
-
-  @override
-  $Res call({
-    Object category = freezed,
-    Object esercizio = freezed,
-    Object eventName = freezed,
-  }) {
-    return _then(_YearChanged(
-      category: category == freezed ? _value.category : category as String,
-      esercizio: esercizio == freezed ? _value.esercizio : esercizio as String,
-      eventName: eventName == freezed ? _value.eventName : eventName as String,
-    ));
-  }
-}
-
-class _$_YearChanged implements _YearChanged {
-  const _$_YearChanged({this.category, this.esercizio, this.eventName});
-
-  @override
-  final String category;
-  @override
-  final String esercizio;
-  @override
-  final String eventName;
-
-  @override
-  String toString() {
-    return 'RankingEvent.yearChanged(category: $category, esercizio: $esercizio, eventName: $eventName)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _YearChanged &&
-            (identical(other.category, category) ||
-                const DeepCollectionEquality()
-                    .equals(other.category, category)) &&
-            (identical(other.esercizio, esercizio) ||
-                const DeepCollectionEquality()
-                    .equals(other.esercizio, esercizio)) &&
-            (identical(other.eventName, eventName) ||
-                const DeepCollectionEquality()
-                    .equals(other.eventName, eventName)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(category) ^
-      const DeepCollectionEquality().hash(esercizio) ^
-      const DeepCollectionEquality().hash(eventName);
-
-  @override
-  _$YearChangedCopyWith<_YearChanged> get copyWith =>
-      __$YearChangedCopyWithImpl<_YearChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initFetchSeasonRanking(String esercizio, String category),
-    @required
-        Result categoryChanged(
-            String category, String esercizio, String eventName),
-    @required
-        Result yearChanged(String category, String esercizio, String eventName),
-    @required
-        Result eventChanged(
-            String category, String esercizio, String eventName),
-  }) {
-    assert(initFetchSeasonRanking != null);
-    assert(categoryChanged != null);
-    assert(yearChanged != null);
-    assert(eventChanged != null);
-    return yearChanged(category, esercizio, eventName);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initFetchSeasonRanking(String esercizio, String category),
-    Result categoryChanged(String category, String esercizio, String eventName),
-    Result yearChanged(String category, String esercizio, String eventName),
-    Result eventChanged(String category, String esercizio, String eventName),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (yearChanged != null) {
-      return yearChanged(category, esercizio, eventName);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initFetchSeasonRanking(_InitFetchSeasonRanking value),
-    @required Result categoryChanged(_CategoryChanged value),
-    @required Result yearChanged(_YearChanged value),
-    @required Result eventChanged(_EventChanged value),
-  }) {
-    assert(initFetchSeasonRanking != null);
-    assert(categoryChanged != null);
-    assert(yearChanged != null);
-    assert(eventChanged != null);
-    return yearChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initFetchSeasonRanking(_InitFetchSeasonRanking value),
-    Result categoryChanged(_CategoryChanged value),
-    Result yearChanged(_YearChanged value),
-    Result eventChanged(_EventChanged value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (yearChanged != null) {
-      return yearChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _YearChanged implements RankingEvent {
-  const factory _YearChanged(
-      {String category, String esercizio, String eventName}) = _$_YearChanged;
-
-  @override
-  String get category;
-  @override
-  String get esercizio;
-  String get eventName;
-  @override
-  _$YearChangedCopyWith<_YearChanged> get copyWith;
-}
-
-abstract class _$EventChangedCopyWith<$Res>
-    implements $RankingEventCopyWith<$Res> {
-  factory _$EventChangedCopyWith(
-          _EventChanged value, $Res Function(_EventChanged) then) =
-      __$EventChangedCopyWithImpl<$Res>;
-  @override
-  $Res call({String category, String esercizio, String eventName});
-}
-
-class __$EventChangedCopyWithImpl<$Res> extends _$RankingEventCopyWithImpl<$Res>
-    implements _$EventChangedCopyWith<$Res> {
-  __$EventChangedCopyWithImpl(
-      _EventChanged _value, $Res Function(_EventChanged) _then)
-      : super(_value, (v) => _then(v as _EventChanged));
-
-  @override
-  _EventChanged get _value => super._value as _EventChanged;
-
-  @override
-  $Res call({
-    Object category = freezed,
-    Object esercizio = freezed,
-    Object eventName = freezed,
-  }) {
-    return _then(_EventChanged(
-      category: category == freezed ? _value.category : category as String,
-      esercizio: esercizio == freezed ? _value.esercizio : esercizio as String,
-      eventName: eventName == freezed ? _value.eventName : eventName as String,
-    ));
-  }
-}
-
-class _$_EventChanged implements _EventChanged {
-  const _$_EventChanged({this.category, this.esercizio, this.eventName});
-
-  @override
-  final String category;
-  @override
-  final String esercizio;
-  @override
-  final String eventName;
-
-  @override
-  String toString() {
-    return 'RankingEvent.eventChanged(category: $category, esercizio: $esercizio, eventName: $eventName)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _EventChanged &&
-            (identical(other.category, category) ||
-                const DeepCollectionEquality()
-                    .equals(other.category, category)) &&
-            (identical(other.esercizio, esercizio) ||
-                const DeepCollectionEquality()
-                    .equals(other.esercizio, esercizio)) &&
-            (identical(other.eventName, eventName) ||
-                const DeepCollectionEquality()
-                    .equals(other.eventName, eventName)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(category) ^
-      const DeepCollectionEquality().hash(esercizio) ^
-      const DeepCollectionEquality().hash(eventName);
-
-  @override
-  _$EventChangedCopyWith<_EventChanged> get copyWith =>
-      __$EventChangedCopyWithImpl<_EventChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initFetchSeasonRanking(String esercizio, String category),
-    @required
-        Result categoryChanged(
-            String category, String esercizio, String eventName),
-    @required
-        Result yearChanged(String category, String esercizio, String eventName),
-    @required
-        Result eventChanged(
-            String category, String esercizio, String eventName),
-  }) {
-    assert(initFetchSeasonRanking != null);
-    assert(categoryChanged != null);
-    assert(yearChanged != null);
-    assert(eventChanged != null);
-    return eventChanged(category, esercizio, eventName);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initFetchSeasonRanking(String esercizio, String category),
-    Result categoryChanged(String category, String esercizio, String eventName),
-    Result yearChanged(String category, String esercizio, String eventName),
-    Result eventChanged(String category, String esercizio, String eventName),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (eventChanged != null) {
-      return eventChanged(category, esercizio, eventName);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initFetchSeasonRanking(_InitFetchSeasonRanking value),
-    @required Result categoryChanged(_CategoryChanged value),
-    @required Result yearChanged(_YearChanged value),
-    @required Result eventChanged(_EventChanged value),
-  }) {
-    assert(initFetchSeasonRanking != null);
-    assert(categoryChanged != null);
-    assert(yearChanged != null);
-    assert(eventChanged != null);
-    return eventChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initFetchSeasonRanking(_InitFetchSeasonRanking value),
-    Result categoryChanged(_CategoryChanged value),
-    Result yearChanged(_YearChanged value),
-    Result eventChanged(_EventChanged value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (eventChanged != null) {
-      return eventChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _EventChanged implements RankingEvent {
-  const factory _EventChanged(
-      {String category, String esercizio, String eventName}) = _$_EventChanged;
-
-  @override
-  String get category;
-  @override
-  String get esercizio;
-  String get eventName;
-  @override
-  _$EventChangedCopyWith<_EventChanged> get copyWith;
+  _$OnChangeParameterCopyWith<_OnChangeParameter> get copyWith;
 }
 
 class _$RankingStateTearOff {

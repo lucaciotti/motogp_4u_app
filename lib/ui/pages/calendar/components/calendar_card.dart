@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:motogp_4u_app/code/core/entity/calendar/calendar_event.dart';
+import 'package:motogp_4u_app/ui/routes/router.gr.dart';
 
 class CalendarCard extends StatelessWidget {
   final CalendarEvent event;
@@ -108,7 +110,8 @@ class CalendarCard extends StatelessWidget {
                 Expanded(
                   child: FlatButton(
                     onPressed: () {
-                      // Perform some action
+                      ExtendedNavigator.of(context).pushCircuitInfoPage(
+                          circuitSubLink: event.circuitLinkName);
                     },
                     child: const Text('CIRCUIT'),
                   ),

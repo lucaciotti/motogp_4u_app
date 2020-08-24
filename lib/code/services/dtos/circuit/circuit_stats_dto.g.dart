@@ -10,7 +10,7 @@ _$_CircuitStatsDto _$_$_CircuitStatsDtoFromJson(Map<String, dynamic> json) {
   return _$_CircuitStatsDto(
     riderName: json['rider_name'] as String,
     riderNum: json['rider_num'] as String,
-    value: json['value'] as int,
+    value: json['value'] as String,
   );
 }
 

@@ -21,7 +21,7 @@ class _$CircuitRecordsTearOff {
       @required String riderNum,
       @required String riderTeam,
       @required String timeValue,
-      @required int speedValue}) {
+      @required double speedValue}) {
     return _CircuitRecords(
       uid: uid,
       season: season,
@@ -46,7 +46,7 @@ mixin _$CircuitRecords {
   String get riderNum;
   String get riderTeam;
   String get timeValue;
-  int get speedValue;
+  double get speedValue;
 
   $CircuitRecordsCopyWith<CircuitRecords> get copyWith;
 }
@@ -63,7 +63,7 @@ abstract class $CircuitRecordsCopyWith<$Res> {
       String riderNum,
       String riderTeam,
       String timeValue,
-      int speedValue});
+      double speedValue});
 }
 
 class _$CircuitRecordsCopyWithImpl<$Res>
@@ -95,7 +95,8 @@ class _$CircuitRecordsCopyWithImpl<$Res>
       riderNum: riderNum == freezed ? _value.riderNum : riderNum as String,
       riderTeam: riderTeam == freezed ? _value.riderTeam : riderTeam as String,
       timeValue: timeValue == freezed ? _value.timeValue : timeValue as String,
-      speedValue: speedValue == freezed ? _value.speedValue : speedValue as int,
+      speedValue:
+          speedValue == freezed ? _value.speedValue : speedValue as double,
     ));
   }
 }
@@ -114,7 +115,7 @@ abstract class _$CircuitRecordsCopyWith<$Res>
       String riderNum,
       String riderTeam,
       String timeValue,
-      int speedValue});
+      double speedValue});
 }
 
 class __$CircuitRecordsCopyWithImpl<$Res>
@@ -148,7 +149,8 @@ class __$CircuitRecordsCopyWithImpl<$Res>
       riderNum: riderNum == freezed ? _value.riderNum : riderNum as String,
       riderTeam: riderTeam == freezed ? _value.riderTeam : riderTeam as String,
       timeValue: timeValue == freezed ? _value.timeValue : timeValue as String,
-      speedValue: speedValue == freezed ? _value.speedValue : speedValue as int,
+      speedValue:
+          speedValue == freezed ? _value.speedValue : speedValue as double,
     ));
   }
 }
@@ -188,7 +190,7 @@ class _$_CircuitRecords extends _CircuitRecords {
   @override
   final String timeValue;
   @override
-  final int speedValue;
+  final double speedValue;
 
   @override
   String toString() {
@@ -250,7 +252,7 @@ abstract class _CircuitRecords extends CircuitRecords {
       @required String riderNum,
       @required String riderTeam,
       @required String timeValue,
-      @required int speedValue}) = _$_CircuitRecords;
+      @required double speedValue}) = _$_CircuitRecords;
 
   @override
   UniqueID get uid;
@@ -267,7 +269,7 @@ abstract class _CircuitRecords extends CircuitRecords {
   @override
   String get timeValue;
   @override
-  int get speedValue;
+  double get speedValue;
   @override
   _$CircuitRecordsCopyWith<_CircuitRecords> get copyWith;
 }

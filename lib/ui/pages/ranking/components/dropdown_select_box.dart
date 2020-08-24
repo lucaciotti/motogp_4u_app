@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class DropDownSelectBox extends StatelessWidget {
   final String initValue;
-  final Function onSelectItem;
+  final Function(String) onSelectItem;
   final List<String> itemList;
   const DropDownSelectBox({
     Key key,

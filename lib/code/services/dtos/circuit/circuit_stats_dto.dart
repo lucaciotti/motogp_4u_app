@@ -10,7 +10,7 @@ abstract class CircuitStatsDto with _$CircuitStatsDto {
   const factory CircuitStatsDto({
     @JsonKey(name: 'rider_name') String riderName,
     @JsonKey(name: 'rider_num') String riderNum,
-    @JsonKey(name: 'value') int value,
+    @JsonKey(name: 'value') String value,
   }) = _CircuitStatsDto;
 
   factory CircuitStatsDto.fromJson(Map<String, dynamic> json) =>
@@ -26,7 +26,7 @@ extension CircuitStatsDtoX on CircuitStatsDto {
       riderName: riderName.substring(0, riderName.indexOf(' ')).trim(),
       riderSurname: riderName.substring(riderName.indexOf(' ')).trim(),
       riderNum: riderNum,
-      value: value,
+      value: value.isNotEmpty ? int.parse(value) : 0,
     );
   }
 

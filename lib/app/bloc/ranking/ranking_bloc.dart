@@ -25,7 +25,10 @@ class RankingBloc extends Bloc<RankingEvent, RankingState> {
       initFetchSeasonRanking: (e) async* {
         yield const RankingState.loadInProgress();
         yield await _iRankingFacade
-            .getSeasonRankig(esercizio: e.esercizio, category: e.category)
+            .getSeasonRankig(
+              esercizio: e.esercizio,
+              category: e.category,
+            )
             .then(
               (res) => res.fold(
                 (f) => RankingState.loadFailed(f),
@@ -33,41 +36,13 @@ class RankingBloc extends Bloc<RankingEvent, RankingState> {
               ),
             );
       },
-      categoryChanged: (e) async* {
+      onChangeParameter: (e) async* {
         yield const RankingState.loadInProgress();
         yield await _iRankingFacade
-            .getProgressiveRankig(
-                esercizio: e.esercizio,
-                category: e.category,
-                eventName: e.eventName)
-            .then(
-              (res) => res.fold(
-                (f) => RankingState.loadFailed(f),
-                (r) => RankingState.loadSuccess(r),
-              ),
-            );
-      },
-      yearChanged: (e) async* {
-        yield const RankingState.loadInProgress();
-        yield await _iRankingFacade
-            .getProgressiveRankig(
-                esercizio: e.esercizio,
-                category: e.category,
-                eventName: e.eventName)
-            .then(
-              (res) => res.fold(
-                (f) => RankingState.loadFailed(f),
-                (r) => RankingState.loadSuccess(r),
-              ),
-            );
-      },
-      eventChanged: (e) async* {
-        yield const RankingState.loadInProgress();
-        yield await _iRankingFacade
-            .getProgressiveRankig(
-                esercizio: e.esercizio,
-                category: e.category,
-                eventName: e.eventName)
+            .getSeasonRankig(
+              esercizio: e.esercizio,
+              category: e.category,
+            )
             .then(
               (res) => res.fold(
                 (f) => RankingState.loadFailed(f),

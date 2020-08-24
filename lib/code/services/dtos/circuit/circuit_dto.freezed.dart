@@ -25,7 +25,7 @@ class _$CircuitDtoTearOff {
           String autodrome,
       @JsonKey(name: 'event_date')
           String eventDate,
-      @JsonKey(name: 'description')
+      @JsonKey(name: 'short_description')
           String description,
       @JsonKey(name: 'image_circuit')
           String trackImage,
@@ -40,41 +40,23 @@ class _$CircuitDtoTearOff {
       @JsonKey(name: 'corner_right')
           String trackCornerRight,
       @JsonKey(name: 'motogp_most_wins')
-          CircuitStatsDto motogpMostWins,
+          List<CircuitStatsDto> motogpMostWins,
       @JsonKey(name: 'moto2_most_wins')
-          CircuitStatsDto moto2MostWins,
+          List<CircuitStatsDto> moto2MostWins,
       @JsonKey(name: 'moto3_most_wins')
-          CircuitStatsDto moto3MostWins,
+          List<CircuitStatsDto> moto3MostWins,
       @JsonKey(name: 'motogp_most_poles')
-          CircuitStatsDto motogpMostPoles,
+          List<CircuitStatsDto> motogpMostPoles,
       @JsonKey(name: 'moto2_most_poles')
-          CircuitStatsDto moto2MostPoles,
+          List<CircuitStatsDto> moto2MostPoles,
       @JsonKey(name: 'moto3_most_poles')
-          CircuitStatsDto moto3MostPoles,
-      @JsonKey(name: 'motogp_circuit_records.all_time_lap_record')
-          CircuitRecordsDto motogpEverLapRecord,
-      @JsonKey(name: 'motogp_circuit_records.best_race_lap')
-          CircuitRecordsDto motogpRaceLapRecord,
-      @JsonKey(name: 'motogp_circuit_records.best_pole')
-          CircuitRecordsDto motogpBestPoleRecord,
-      @JsonKey(name: 'motogp_circuit_records.to_speed')
-          CircuitRecordsDto motogpTopSpeedRecord,
-      @JsonKey(name: 'moto2_circuit_records.all_time_lap_record')
-          CircuitRecordsDto moto2EverLapRecord,
-      @JsonKey(name: 'moto2_circuit_records.best_race_lap')
-          CircuitRecordsDto moto2RaceLapRecord,
-      @JsonKey(name: 'moto2_circuit_records.best_pole')
-          CircuitRecordsDto moto2BestPoleRecord,
-      @JsonKey(name: 'moto2_circuit_records.to_speed')
-          CircuitRecordsDto moto2TopSpeedRecord,
-      @JsonKey(name: 'moto3_circuit_records.all_time_lap_record')
-          CircuitRecordsDto moto3EverLapRecord,
-      @JsonKey(name: 'moto3_circuit_records.best_race_lap')
-          CircuitRecordsDto moto3RaceLapRecord,
-      @JsonKey(name: 'moto3_circuit_records.best_pole')
-          CircuitRecordsDto moto3BestPoleRecord,
-      @JsonKey(name: 'moto3_circuit_records.to_speed')
-          CircuitRecordsDto moto3TopSpeedRecord}) {
+          List<CircuitStatsDto> moto3MostPoles,
+      @JsonKey(name: 'motogp_circuit_records')
+          List<CategoryCircuitRecordsDto> motogpRecords,
+      @JsonKey(name: 'moto2_circuit_records')
+          List<CategoryCircuitRecordsDto> moto2Records,
+      @JsonKey(name: 'moto3_circuit_records')
+          List<CategoryCircuitRecordsDto> moto3Records}) {
     return _CircuitDto(
       name: name,
       nation: nation,
@@ -93,18 +75,9 @@ class _$CircuitDtoTearOff {
       motogpMostPoles: motogpMostPoles,
       moto2MostPoles: moto2MostPoles,
       moto3MostPoles: moto3MostPoles,
-      motogpEverLapRecord: motogpEverLapRecord,
-      motogpRaceLapRecord: motogpRaceLapRecord,
-      motogpBestPoleRecord: motogpBestPoleRecord,
-      motogpTopSpeedRecord: motogpTopSpeedRecord,
-      moto2EverLapRecord: moto2EverLapRecord,
-      moto2RaceLapRecord: moto2RaceLapRecord,
-      moto2BestPoleRecord: moto2BestPoleRecord,
-      moto2TopSpeedRecord: moto2TopSpeedRecord,
-      moto3EverLapRecord: moto3EverLapRecord,
-      moto3RaceLapRecord: moto3RaceLapRecord,
-      moto3BestPoleRecord: moto3BestPoleRecord,
-      moto3TopSpeedRecord: moto3TopSpeedRecord,
+      motogpRecords: motogpRecords,
+      moto2Records: moto2Records,
+      moto3Records: moto3Records,
     );
   }
 }
@@ -121,7 +94,7 @@ mixin _$CircuitDto {
   String get autodrome;
   @JsonKey(name: 'event_date')
   String get eventDate;
-  @JsonKey(name: 'description')
+  @JsonKey(name: 'short_description')
   String get description;
   @JsonKey(name: 'image_circuit')
   String get trackImage;
@@ -136,41 +109,23 @@ mixin _$CircuitDto {
   @JsonKey(name: 'corner_right')
   String get trackCornerRight;
   @JsonKey(name: 'motogp_most_wins')
-  CircuitStatsDto get motogpMostWins;
+  List<CircuitStatsDto> get motogpMostWins;
   @JsonKey(name: 'moto2_most_wins')
-  CircuitStatsDto get moto2MostWins;
+  List<CircuitStatsDto> get moto2MostWins;
   @JsonKey(name: 'moto3_most_wins')
-  CircuitStatsDto get moto3MostWins;
+  List<CircuitStatsDto> get moto3MostWins;
   @JsonKey(name: 'motogp_most_poles')
-  CircuitStatsDto get motogpMostPoles;
+  List<CircuitStatsDto> get motogpMostPoles;
   @JsonKey(name: 'moto2_most_poles')
-  CircuitStatsDto get moto2MostPoles;
+  List<CircuitStatsDto> get moto2MostPoles;
   @JsonKey(name: 'moto3_most_poles')
-  CircuitStatsDto get moto3MostPoles;
-  @JsonKey(name: 'motogp_circuit_records.all_time_lap_record')
-  CircuitRecordsDto get motogpEverLapRecord;
-  @JsonKey(name: 'motogp_circuit_records.best_race_lap')
-  CircuitRecordsDto get motogpRaceLapRecord;
-  @JsonKey(name: 'motogp_circuit_records.best_pole')
-  CircuitRecordsDto get motogpBestPoleRecord;
-  @JsonKey(name: 'motogp_circuit_records.to_speed')
-  CircuitRecordsDto get motogpTopSpeedRecord;
-  @JsonKey(name: 'moto2_circuit_records.all_time_lap_record')
-  CircuitRecordsDto get moto2EverLapRecord;
-  @JsonKey(name: 'moto2_circuit_records.best_race_lap')
-  CircuitRecordsDto get moto2RaceLapRecord;
-  @JsonKey(name: 'moto2_circuit_records.best_pole')
-  CircuitRecordsDto get moto2BestPoleRecord;
-  @JsonKey(name: 'moto2_circuit_records.to_speed')
-  CircuitRecordsDto get moto2TopSpeedRecord;
-  @JsonKey(name: 'moto3_circuit_records.all_time_lap_record')
-  CircuitRecordsDto get moto3EverLapRecord;
-  @JsonKey(name: 'moto3_circuit_records.best_race_lap')
-  CircuitRecordsDto get moto3RaceLapRecord;
-  @JsonKey(name: 'moto3_circuit_records.best_pole')
-  CircuitRecordsDto get moto3BestPoleRecord;
-  @JsonKey(name: 'moto3_circuit_records.to_speed')
-  CircuitRecordsDto get moto3TopSpeedRecord;
+  List<CircuitStatsDto> get moto3MostPoles;
+  @JsonKey(name: 'motogp_circuit_records')
+  List<CategoryCircuitRecordsDto> get motogpRecords;
+  @JsonKey(name: 'moto2_circuit_records')
+  List<CategoryCircuitRecordsDto> get moto2Records;
+  @JsonKey(name: 'moto3_circuit_records')
+  List<CategoryCircuitRecordsDto> get moto3Records;
 
   Map<String, dynamic> toJson();
   $CircuitDtoCopyWith<CircuitDto> get copyWith;
@@ -189,7 +144,7 @@ abstract class $CircuitDtoCopyWith<$Res> {
           String autodrome,
       @JsonKey(name: 'event_date')
           String eventDate,
-      @JsonKey(name: 'description')
+      @JsonKey(name: 'short_description')
           String description,
       @JsonKey(name: 'image_circuit')
           String trackImage,
@@ -204,60 +159,23 @@ abstract class $CircuitDtoCopyWith<$Res> {
       @JsonKey(name: 'corner_right')
           String trackCornerRight,
       @JsonKey(name: 'motogp_most_wins')
-          CircuitStatsDto motogpMostWins,
+          List<CircuitStatsDto> motogpMostWins,
       @JsonKey(name: 'moto2_most_wins')
-          CircuitStatsDto moto2MostWins,
+          List<CircuitStatsDto> moto2MostWins,
       @JsonKey(name: 'moto3_most_wins')
-          CircuitStatsDto moto3MostWins,
+          List<CircuitStatsDto> moto3MostWins,
       @JsonKey(name: 'motogp_most_poles')
-          CircuitStatsDto motogpMostPoles,
+          List<CircuitStatsDto> motogpMostPoles,
       @JsonKey(name: 'moto2_most_poles')
-          CircuitStatsDto moto2MostPoles,
+          List<CircuitStatsDto> moto2MostPoles,
       @JsonKey(name: 'moto3_most_poles')
-          CircuitStatsDto moto3MostPoles,
-      @JsonKey(name: 'motogp_circuit_records.all_time_lap_record')
-          CircuitRecordsDto motogpEverLapRecord,
-      @JsonKey(name: 'motogp_circuit_records.best_race_lap')
-          CircuitRecordsDto motogpRaceLapRecord,
-      @JsonKey(name: 'motogp_circuit_records.best_pole')
-          CircuitRecordsDto motogpBestPoleRecord,
-      @JsonKey(name: 'motogp_circuit_records.to_speed')
-          CircuitRecordsDto motogpTopSpeedRecord,
-      @JsonKey(name: 'moto2_circuit_records.all_time_lap_record')
-          CircuitRecordsDto moto2EverLapRecord,
-      @JsonKey(name: 'moto2_circuit_records.best_race_lap')
-          CircuitRecordsDto moto2RaceLapRecord,
-      @JsonKey(name: 'moto2_circuit_records.best_pole')
-          CircuitRecordsDto moto2BestPoleRecord,
-      @JsonKey(name: 'moto2_circuit_records.to_speed')
-          CircuitRecordsDto moto2TopSpeedRecord,
-      @JsonKey(name: 'moto3_circuit_records.all_time_lap_record')
-          CircuitRecordsDto moto3EverLapRecord,
-      @JsonKey(name: 'moto3_circuit_records.best_race_lap')
-          CircuitRecordsDto moto3RaceLapRecord,
-      @JsonKey(name: 'moto3_circuit_records.best_pole')
-          CircuitRecordsDto moto3BestPoleRecord,
-      @JsonKey(name: 'moto3_circuit_records.to_speed')
-          CircuitRecordsDto moto3TopSpeedRecord});
-
-  $CircuitStatsDtoCopyWith<$Res> get motogpMostWins;
-  $CircuitStatsDtoCopyWith<$Res> get moto2MostWins;
-  $CircuitStatsDtoCopyWith<$Res> get moto3MostWins;
-  $CircuitStatsDtoCopyWith<$Res> get motogpMostPoles;
-  $CircuitStatsDtoCopyWith<$Res> get moto2MostPoles;
-  $CircuitStatsDtoCopyWith<$Res> get moto3MostPoles;
-  $CircuitRecordsDtoCopyWith<$Res> get motogpEverLapRecord;
-  $CircuitRecordsDtoCopyWith<$Res> get motogpRaceLapRecord;
-  $CircuitRecordsDtoCopyWith<$Res> get motogpBestPoleRecord;
-  $CircuitRecordsDtoCopyWith<$Res> get motogpTopSpeedRecord;
-  $CircuitRecordsDtoCopyWith<$Res> get moto2EverLapRecord;
-  $CircuitRecordsDtoCopyWith<$Res> get moto2RaceLapRecord;
-  $CircuitRecordsDtoCopyWith<$Res> get moto2BestPoleRecord;
-  $CircuitRecordsDtoCopyWith<$Res> get moto2TopSpeedRecord;
-  $CircuitRecordsDtoCopyWith<$Res> get moto3EverLapRecord;
-  $CircuitRecordsDtoCopyWith<$Res> get moto3RaceLapRecord;
-  $CircuitRecordsDtoCopyWith<$Res> get moto3BestPoleRecord;
-  $CircuitRecordsDtoCopyWith<$Res> get moto3TopSpeedRecord;
+          List<CircuitStatsDto> moto3MostPoles,
+      @JsonKey(name: 'motogp_circuit_records')
+          List<CategoryCircuitRecordsDto> motogpRecords,
+      @JsonKey(name: 'moto2_circuit_records')
+          List<CategoryCircuitRecordsDto> moto2Records,
+      @JsonKey(name: 'moto3_circuit_records')
+          List<CategoryCircuitRecordsDto> moto3Records});
 }
 
 class _$CircuitDtoCopyWithImpl<$Res> implements $CircuitDtoCopyWith<$Res> {
@@ -286,18 +204,9 @@ class _$CircuitDtoCopyWithImpl<$Res> implements $CircuitDtoCopyWith<$Res> {
     Object motogpMostPoles = freezed,
     Object moto2MostPoles = freezed,
     Object moto3MostPoles = freezed,
-    Object motogpEverLapRecord = freezed,
-    Object motogpRaceLapRecord = freezed,
-    Object motogpBestPoleRecord = freezed,
-    Object motogpTopSpeedRecord = freezed,
-    Object moto2EverLapRecord = freezed,
-    Object moto2RaceLapRecord = freezed,
-    Object moto2BestPoleRecord = freezed,
-    Object moto2TopSpeedRecord = freezed,
-    Object moto3EverLapRecord = freezed,
-    Object moto3RaceLapRecord = freezed,
-    Object moto3BestPoleRecord = freezed,
-    Object moto3TopSpeedRecord = freezed,
+    Object motogpRecords = freezed,
+    Object moto2Records = freezed,
+    Object moto3Records = freezed,
   }) {
     return _then(_value.copyWith(
       name: name == freezed ? _value.name : name as String,
@@ -323,247 +232,32 @@ class _$CircuitDtoCopyWithImpl<$Res> implements $CircuitDtoCopyWith<$Res> {
           : trackCornerRight as String,
       motogpMostWins: motogpMostWins == freezed
           ? _value.motogpMostWins
-          : motogpMostWins as CircuitStatsDto,
+          : motogpMostWins as List<CircuitStatsDto>,
       moto2MostWins: moto2MostWins == freezed
           ? _value.moto2MostWins
-          : moto2MostWins as CircuitStatsDto,
+          : moto2MostWins as List<CircuitStatsDto>,
       moto3MostWins: moto3MostWins == freezed
           ? _value.moto3MostWins
-          : moto3MostWins as CircuitStatsDto,
+          : moto3MostWins as List<CircuitStatsDto>,
       motogpMostPoles: motogpMostPoles == freezed
           ? _value.motogpMostPoles
-          : motogpMostPoles as CircuitStatsDto,
+          : motogpMostPoles as List<CircuitStatsDto>,
       moto2MostPoles: moto2MostPoles == freezed
           ? _value.moto2MostPoles
-          : moto2MostPoles as CircuitStatsDto,
+          : moto2MostPoles as List<CircuitStatsDto>,
       moto3MostPoles: moto3MostPoles == freezed
           ? _value.moto3MostPoles
-          : moto3MostPoles as CircuitStatsDto,
-      motogpEverLapRecord: motogpEverLapRecord == freezed
-          ? _value.motogpEverLapRecord
-          : motogpEverLapRecord as CircuitRecordsDto,
-      motogpRaceLapRecord: motogpRaceLapRecord == freezed
-          ? _value.motogpRaceLapRecord
-          : motogpRaceLapRecord as CircuitRecordsDto,
-      motogpBestPoleRecord: motogpBestPoleRecord == freezed
-          ? _value.motogpBestPoleRecord
-          : motogpBestPoleRecord as CircuitRecordsDto,
-      motogpTopSpeedRecord: motogpTopSpeedRecord == freezed
-          ? _value.motogpTopSpeedRecord
-          : motogpTopSpeedRecord as CircuitRecordsDto,
-      moto2EverLapRecord: moto2EverLapRecord == freezed
-          ? _value.moto2EverLapRecord
-          : moto2EverLapRecord as CircuitRecordsDto,
-      moto2RaceLapRecord: moto2RaceLapRecord == freezed
-          ? _value.moto2RaceLapRecord
-          : moto2RaceLapRecord as CircuitRecordsDto,
-      moto2BestPoleRecord: moto2BestPoleRecord == freezed
-          ? _value.moto2BestPoleRecord
-          : moto2BestPoleRecord as CircuitRecordsDto,
-      moto2TopSpeedRecord: moto2TopSpeedRecord == freezed
-          ? _value.moto2TopSpeedRecord
-          : moto2TopSpeedRecord as CircuitRecordsDto,
-      moto3EverLapRecord: moto3EverLapRecord == freezed
-          ? _value.moto3EverLapRecord
-          : moto3EverLapRecord as CircuitRecordsDto,
-      moto3RaceLapRecord: moto3RaceLapRecord == freezed
-          ? _value.moto3RaceLapRecord
-          : moto3RaceLapRecord as CircuitRecordsDto,
-      moto3BestPoleRecord: moto3BestPoleRecord == freezed
-          ? _value.moto3BestPoleRecord
-          : moto3BestPoleRecord as CircuitRecordsDto,
-      moto3TopSpeedRecord: moto3TopSpeedRecord == freezed
-          ? _value.moto3TopSpeedRecord
-          : moto3TopSpeedRecord as CircuitRecordsDto,
+          : moto3MostPoles as List<CircuitStatsDto>,
+      motogpRecords: motogpRecords == freezed
+          ? _value.motogpRecords
+          : motogpRecords as List<CategoryCircuitRecordsDto>,
+      moto2Records: moto2Records == freezed
+          ? _value.moto2Records
+          : moto2Records as List<CategoryCircuitRecordsDto>,
+      moto3Records: moto3Records == freezed
+          ? _value.moto3Records
+          : moto3Records as List<CategoryCircuitRecordsDto>,
     ));
-  }
-
-  @override
-  $CircuitStatsDtoCopyWith<$Res> get motogpMostWins {
-    if (_value.motogpMostWins == null) {
-      return null;
-    }
-    return $CircuitStatsDtoCopyWith<$Res>(_value.motogpMostWins, (value) {
-      return _then(_value.copyWith(motogpMostWins: value));
-    });
-  }
-
-  @override
-  $CircuitStatsDtoCopyWith<$Res> get moto2MostWins {
-    if (_value.moto2MostWins == null) {
-      return null;
-    }
-    return $CircuitStatsDtoCopyWith<$Res>(_value.moto2MostWins, (value) {
-      return _then(_value.copyWith(moto2MostWins: value));
-    });
-  }
-
-  @override
-  $CircuitStatsDtoCopyWith<$Res> get moto3MostWins {
-    if (_value.moto3MostWins == null) {
-      return null;
-    }
-    return $CircuitStatsDtoCopyWith<$Res>(_value.moto3MostWins, (value) {
-      return _then(_value.copyWith(moto3MostWins: value));
-    });
-  }
-
-  @override
-  $CircuitStatsDtoCopyWith<$Res> get motogpMostPoles {
-    if (_value.motogpMostPoles == null) {
-      return null;
-    }
-    return $CircuitStatsDtoCopyWith<$Res>(_value.motogpMostPoles, (value) {
-      return _then(_value.copyWith(motogpMostPoles: value));
-    });
-  }
-
-  @override
-  $CircuitStatsDtoCopyWith<$Res> get moto2MostPoles {
-    if (_value.moto2MostPoles == null) {
-      return null;
-    }
-    return $CircuitStatsDtoCopyWith<$Res>(_value.moto2MostPoles, (value) {
-      return _then(_value.copyWith(moto2MostPoles: value));
-    });
-  }
-
-  @override
-  $CircuitStatsDtoCopyWith<$Res> get moto3MostPoles {
-    if (_value.moto3MostPoles == null) {
-      return null;
-    }
-    return $CircuitStatsDtoCopyWith<$Res>(_value.moto3MostPoles, (value) {
-      return _then(_value.copyWith(moto3MostPoles: value));
-    });
-  }
-
-  @override
-  $CircuitRecordsDtoCopyWith<$Res> get motogpEverLapRecord {
-    if (_value.motogpEverLapRecord == null) {
-      return null;
-    }
-    return $CircuitRecordsDtoCopyWith<$Res>(_value.motogpEverLapRecord,
-        (value) {
-      return _then(_value.copyWith(motogpEverLapRecord: value));
-    });
-  }
-
-  @override
-  $CircuitRecordsDtoCopyWith<$Res> get motogpRaceLapRecord {
-    if (_value.motogpRaceLapRecord == null) {
-      return null;
-    }
-    return $CircuitRecordsDtoCopyWith<$Res>(_value.motogpRaceLapRecord,
-        (value) {
-      return _then(_value.copyWith(motogpRaceLapRecord: value));
-    });
-  }
-
-  @override
-  $CircuitRecordsDtoCopyWith<$Res> get motogpBestPoleRecord {
-    if (_value.motogpBestPoleRecord == null) {
-      return null;
-    }
-    return $CircuitRecordsDtoCopyWith<$Res>(_value.motogpBestPoleRecord,
-        (value) {
-      return _then(_value.copyWith(motogpBestPoleRecord: value));
-    });
-  }
-
-  @override
-  $CircuitRecordsDtoCopyWith<$Res> get motogpTopSpeedRecord {
-    if (_value.motogpTopSpeedRecord == null) {
-      return null;
-    }
-    return $CircuitRecordsDtoCopyWith<$Res>(_value.motogpTopSpeedRecord,
-        (value) {
-      return _then(_value.copyWith(motogpTopSpeedRecord: value));
-    });
-  }
-
-  @override
-  $CircuitRecordsDtoCopyWith<$Res> get moto2EverLapRecord {
-    if (_value.moto2EverLapRecord == null) {
-      return null;
-    }
-    return $CircuitRecordsDtoCopyWith<$Res>(_value.moto2EverLapRecord, (value) {
-      return _then(_value.copyWith(moto2EverLapRecord: value));
-    });
-  }
-
-  @override
-  $CircuitRecordsDtoCopyWith<$Res> get moto2RaceLapRecord {
-    if (_value.moto2RaceLapRecord == null) {
-      return null;
-    }
-    return $CircuitRecordsDtoCopyWith<$Res>(_value.moto2RaceLapRecord, (value) {
-      return _then(_value.copyWith(moto2RaceLapRecord: value));
-    });
-  }
-
-  @override
-  $CircuitRecordsDtoCopyWith<$Res> get moto2BestPoleRecord {
-    if (_value.moto2BestPoleRecord == null) {
-      return null;
-    }
-    return $CircuitRecordsDtoCopyWith<$Res>(_value.moto2BestPoleRecord,
-        (value) {
-      return _then(_value.copyWith(moto2BestPoleRecord: value));
-    });
-  }
-
-  @override
-  $CircuitRecordsDtoCopyWith<$Res> get moto2TopSpeedRecord {
-    if (_value.moto2TopSpeedRecord == null) {
-      return null;
-    }
-    return $CircuitRecordsDtoCopyWith<$Res>(_value.moto2TopSpeedRecord,
-        (value) {
-      return _then(_value.copyWith(moto2TopSpeedRecord: value));
-    });
-  }
-
-  @override
-  $CircuitRecordsDtoCopyWith<$Res> get moto3EverLapRecord {
-    if (_value.moto3EverLapRecord == null) {
-      return null;
-    }
-    return $CircuitRecordsDtoCopyWith<$Res>(_value.moto3EverLapRecord, (value) {
-      return _then(_value.copyWith(moto3EverLapRecord: value));
-    });
-  }
-
-  @override
-  $CircuitRecordsDtoCopyWith<$Res> get moto3RaceLapRecord {
-    if (_value.moto3RaceLapRecord == null) {
-      return null;
-    }
-    return $CircuitRecordsDtoCopyWith<$Res>(_value.moto3RaceLapRecord, (value) {
-      return _then(_value.copyWith(moto3RaceLapRecord: value));
-    });
-  }
-
-  @override
-  $CircuitRecordsDtoCopyWith<$Res> get moto3BestPoleRecord {
-    if (_value.moto3BestPoleRecord == null) {
-      return null;
-    }
-    return $CircuitRecordsDtoCopyWith<$Res>(_value.moto3BestPoleRecord,
-        (value) {
-      return _then(_value.copyWith(moto3BestPoleRecord: value));
-    });
-  }
-
-  @override
-  $CircuitRecordsDtoCopyWith<$Res> get moto3TopSpeedRecord {
-    if (_value.moto3TopSpeedRecord == null) {
-      return null;
-    }
-    return $CircuitRecordsDtoCopyWith<$Res>(_value.moto3TopSpeedRecord,
-        (value) {
-      return _then(_value.copyWith(moto3TopSpeedRecord: value));
-    });
   }
 }
 
@@ -581,7 +275,7 @@ abstract class _$CircuitDtoCopyWith<$Res> implements $CircuitDtoCopyWith<$Res> {
           String autodrome,
       @JsonKey(name: 'event_date')
           String eventDate,
-      @JsonKey(name: 'description')
+      @JsonKey(name: 'short_description')
           String description,
       @JsonKey(name: 'image_circuit')
           String trackImage,
@@ -596,78 +290,23 @@ abstract class _$CircuitDtoCopyWith<$Res> implements $CircuitDtoCopyWith<$Res> {
       @JsonKey(name: 'corner_right')
           String trackCornerRight,
       @JsonKey(name: 'motogp_most_wins')
-          CircuitStatsDto motogpMostWins,
+          List<CircuitStatsDto> motogpMostWins,
       @JsonKey(name: 'moto2_most_wins')
-          CircuitStatsDto moto2MostWins,
+          List<CircuitStatsDto> moto2MostWins,
       @JsonKey(name: 'moto3_most_wins')
-          CircuitStatsDto moto3MostWins,
+          List<CircuitStatsDto> moto3MostWins,
       @JsonKey(name: 'motogp_most_poles')
-          CircuitStatsDto motogpMostPoles,
+          List<CircuitStatsDto> motogpMostPoles,
       @JsonKey(name: 'moto2_most_poles')
-          CircuitStatsDto moto2MostPoles,
+          List<CircuitStatsDto> moto2MostPoles,
       @JsonKey(name: 'moto3_most_poles')
-          CircuitStatsDto moto3MostPoles,
-      @JsonKey(name: 'motogp_circuit_records.all_time_lap_record')
-          CircuitRecordsDto motogpEverLapRecord,
-      @JsonKey(name: 'motogp_circuit_records.best_race_lap')
-          CircuitRecordsDto motogpRaceLapRecord,
-      @JsonKey(name: 'motogp_circuit_records.best_pole')
-          CircuitRecordsDto motogpBestPoleRecord,
-      @JsonKey(name: 'motogp_circuit_records.to_speed')
-          CircuitRecordsDto motogpTopSpeedRecord,
-      @JsonKey(name: 'moto2_circuit_records.all_time_lap_record')
-          CircuitRecordsDto moto2EverLapRecord,
-      @JsonKey(name: 'moto2_circuit_records.best_race_lap')
-          CircuitRecordsDto moto2RaceLapRecord,
-      @JsonKey(name: 'moto2_circuit_records.best_pole')
-          CircuitRecordsDto moto2BestPoleRecord,
-      @JsonKey(name: 'moto2_circuit_records.to_speed')
-          CircuitRecordsDto moto2TopSpeedRecord,
-      @JsonKey(name: 'moto3_circuit_records.all_time_lap_record')
-          CircuitRecordsDto moto3EverLapRecord,
-      @JsonKey(name: 'moto3_circuit_records.best_race_lap')
-          CircuitRecordsDto moto3RaceLapRecord,
-      @JsonKey(name: 'moto3_circuit_records.best_pole')
-          CircuitRecordsDto moto3BestPoleRecord,
-      @JsonKey(name: 'moto3_circuit_records.to_speed')
-          CircuitRecordsDto moto3TopSpeedRecord});
-
-  @override
-  $CircuitStatsDtoCopyWith<$Res> get motogpMostWins;
-  @override
-  $CircuitStatsDtoCopyWith<$Res> get moto2MostWins;
-  @override
-  $CircuitStatsDtoCopyWith<$Res> get moto3MostWins;
-  @override
-  $CircuitStatsDtoCopyWith<$Res> get motogpMostPoles;
-  @override
-  $CircuitStatsDtoCopyWith<$Res> get moto2MostPoles;
-  @override
-  $CircuitStatsDtoCopyWith<$Res> get moto3MostPoles;
-  @override
-  $CircuitRecordsDtoCopyWith<$Res> get motogpEverLapRecord;
-  @override
-  $CircuitRecordsDtoCopyWith<$Res> get motogpRaceLapRecord;
-  @override
-  $CircuitRecordsDtoCopyWith<$Res> get motogpBestPoleRecord;
-  @override
-  $CircuitRecordsDtoCopyWith<$Res> get motogpTopSpeedRecord;
-  @override
-  $CircuitRecordsDtoCopyWith<$Res> get moto2EverLapRecord;
-  @override
-  $CircuitRecordsDtoCopyWith<$Res> get moto2RaceLapRecord;
-  @override
-  $CircuitRecordsDtoCopyWith<$Res> get moto2BestPoleRecord;
-  @override
-  $CircuitRecordsDtoCopyWith<$Res> get moto2TopSpeedRecord;
-  @override
-  $CircuitRecordsDtoCopyWith<$Res> get moto3EverLapRecord;
-  @override
-  $CircuitRecordsDtoCopyWith<$Res> get moto3RaceLapRecord;
-  @override
-  $CircuitRecordsDtoCopyWith<$Res> get moto3BestPoleRecord;
-  @override
-  $CircuitRecordsDtoCopyWith<$Res> get moto3TopSpeedRecord;
+          List<CircuitStatsDto> moto3MostPoles,
+      @JsonKey(name: 'motogp_circuit_records')
+          List<CategoryCircuitRecordsDto> motogpRecords,
+      @JsonKey(name: 'moto2_circuit_records')
+          List<CategoryCircuitRecordsDto> moto2Records,
+      @JsonKey(name: 'moto3_circuit_records')
+          List<CategoryCircuitRecordsDto> moto3Records});
 }
 
 class __$CircuitDtoCopyWithImpl<$Res> extends _$CircuitDtoCopyWithImpl<$Res>
@@ -698,18 +337,9 @@ class __$CircuitDtoCopyWithImpl<$Res> extends _$CircuitDtoCopyWithImpl<$Res>
     Object motogpMostPoles = freezed,
     Object moto2MostPoles = freezed,
     Object moto3MostPoles = freezed,
-    Object motogpEverLapRecord = freezed,
-    Object motogpRaceLapRecord = freezed,
-    Object motogpBestPoleRecord = freezed,
-    Object motogpTopSpeedRecord = freezed,
-    Object moto2EverLapRecord = freezed,
-    Object moto2RaceLapRecord = freezed,
-    Object moto2BestPoleRecord = freezed,
-    Object moto2TopSpeedRecord = freezed,
-    Object moto3EverLapRecord = freezed,
-    Object moto3RaceLapRecord = freezed,
-    Object moto3BestPoleRecord = freezed,
-    Object moto3TopSpeedRecord = freezed,
+    Object motogpRecords = freezed,
+    Object moto2Records = freezed,
+    Object moto3Records = freezed,
   }) {
     return _then(_CircuitDto(
       name: name == freezed ? _value.name : name as String,
@@ -735,58 +365,31 @@ class __$CircuitDtoCopyWithImpl<$Res> extends _$CircuitDtoCopyWithImpl<$Res>
           : trackCornerRight as String,
       motogpMostWins: motogpMostWins == freezed
           ? _value.motogpMostWins
-          : motogpMostWins as CircuitStatsDto,
+          : motogpMostWins as List<CircuitStatsDto>,
       moto2MostWins: moto2MostWins == freezed
           ? _value.moto2MostWins
-          : moto2MostWins as CircuitStatsDto,
+          : moto2MostWins as List<CircuitStatsDto>,
       moto3MostWins: moto3MostWins == freezed
           ? _value.moto3MostWins
-          : moto3MostWins as CircuitStatsDto,
+          : moto3MostWins as List<CircuitStatsDto>,
       motogpMostPoles: motogpMostPoles == freezed
           ? _value.motogpMostPoles
-          : motogpMostPoles as CircuitStatsDto,
+          : motogpMostPoles as List<CircuitStatsDto>,
       moto2MostPoles: moto2MostPoles == freezed
           ? _value.moto2MostPoles
-          : moto2MostPoles as CircuitStatsDto,
+          : moto2MostPoles as List<CircuitStatsDto>,
       moto3MostPoles: moto3MostPoles == freezed
           ? _value.moto3MostPoles
-          : moto3MostPoles as CircuitStatsDto,
-      motogpEverLapRecord: motogpEverLapRecord == freezed
-          ? _value.motogpEverLapRecord
-          : motogpEverLapRecord as CircuitRecordsDto,
-      motogpRaceLapRecord: motogpRaceLapRecord == freezed
-          ? _value.motogpRaceLapRecord
-          : motogpRaceLapRecord as CircuitRecordsDto,
-      motogpBestPoleRecord: motogpBestPoleRecord == freezed
-          ? _value.motogpBestPoleRecord
-          : motogpBestPoleRecord as CircuitRecordsDto,
-      motogpTopSpeedRecord: motogpTopSpeedRecord == freezed
-          ? _value.motogpTopSpeedRecord
-          : motogpTopSpeedRecord as CircuitRecordsDto,
-      moto2EverLapRecord: moto2EverLapRecord == freezed
-          ? _value.moto2EverLapRecord
-          : moto2EverLapRecord as CircuitRecordsDto,
-      moto2RaceLapRecord: moto2RaceLapRecord == freezed
-          ? _value.moto2RaceLapRecord
-          : moto2RaceLapRecord as CircuitRecordsDto,
-      moto2BestPoleRecord: moto2BestPoleRecord == freezed
-          ? _value.moto2BestPoleRecord
-          : moto2BestPoleRecord as CircuitRecordsDto,
-      moto2TopSpeedRecord: moto2TopSpeedRecord == freezed
-          ? _value.moto2TopSpeedRecord
-          : moto2TopSpeedRecord as CircuitRecordsDto,
-      moto3EverLapRecord: moto3EverLapRecord == freezed
-          ? _value.moto3EverLapRecord
-          : moto3EverLapRecord as CircuitRecordsDto,
-      moto3RaceLapRecord: moto3RaceLapRecord == freezed
-          ? _value.moto3RaceLapRecord
-          : moto3RaceLapRecord as CircuitRecordsDto,
-      moto3BestPoleRecord: moto3BestPoleRecord == freezed
-          ? _value.moto3BestPoleRecord
-          : moto3BestPoleRecord as CircuitRecordsDto,
-      moto3TopSpeedRecord: moto3TopSpeedRecord == freezed
-          ? _value.moto3TopSpeedRecord
-          : moto3TopSpeedRecord as CircuitRecordsDto,
+          : moto3MostPoles as List<CircuitStatsDto>,
+      motogpRecords: motogpRecords == freezed
+          ? _value.motogpRecords
+          : motogpRecords as List<CategoryCircuitRecordsDto>,
+      moto2Records: moto2Records == freezed
+          ? _value.moto2Records
+          : moto2Records as List<CategoryCircuitRecordsDto>,
+      moto3Records: moto3Records == freezed
+          ? _value.moto3Records
+          : moto3Records as List<CategoryCircuitRecordsDto>,
     ));
   }
 }
@@ -794,64 +397,26 @@ class __$CircuitDtoCopyWithImpl<$Res> extends _$CircuitDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_CircuitDto extends _CircuitDto {
   const _$_CircuitDto(
-      {@JsonKey(name: 'event_name')
-          this.name,
-      @JsonKey(name: 'event_nation')
-          this.nation,
-      @JsonKey(name: 'event_autodrome')
-          this.autodrome,
-      @JsonKey(name: 'event_date')
-          this.eventDate,
-      @JsonKey(name: 'description')
-          this.description,
-      @JsonKey(name: 'image_circuit')
-          this.trackImage,
-      @JsonKey(name: 'lenght_euro')
-          this.trackLenght,
-      @JsonKey(name: 'width_euro')
-          this.trackWidth,
-      @JsonKey(name: 'longstraight_euro')
-          this.trackLongestStraight,
-      @JsonKey(name: 'corner_left')
-          this.trackCornerLeft,
-      @JsonKey(name: 'corner_right')
-          this.trackCornerRight,
-      @JsonKey(name: 'motogp_most_wins')
-          this.motogpMostWins,
-      @JsonKey(name: 'moto2_most_wins')
-          this.moto2MostWins,
-      @JsonKey(name: 'moto3_most_wins')
-          this.moto3MostWins,
-      @JsonKey(name: 'motogp_most_poles')
-          this.motogpMostPoles,
-      @JsonKey(name: 'moto2_most_poles')
-          this.moto2MostPoles,
-      @JsonKey(name: 'moto3_most_poles')
-          this.moto3MostPoles,
-      @JsonKey(name: 'motogp_circuit_records.all_time_lap_record')
-          this.motogpEverLapRecord,
-      @JsonKey(name: 'motogp_circuit_records.best_race_lap')
-          this.motogpRaceLapRecord,
-      @JsonKey(name: 'motogp_circuit_records.best_pole')
-          this.motogpBestPoleRecord,
-      @JsonKey(name: 'motogp_circuit_records.to_speed')
-          this.motogpTopSpeedRecord,
-      @JsonKey(name: 'moto2_circuit_records.all_time_lap_record')
-          this.moto2EverLapRecord,
-      @JsonKey(name: 'moto2_circuit_records.best_race_lap')
-          this.moto2RaceLapRecord,
-      @JsonKey(name: 'moto2_circuit_records.best_pole')
-          this.moto2BestPoleRecord,
-      @JsonKey(name: 'moto2_circuit_records.to_speed')
-          this.moto2TopSpeedRecord,
-      @JsonKey(name: 'moto3_circuit_records.all_time_lap_record')
-          this.moto3EverLapRecord,
-      @JsonKey(name: 'moto3_circuit_records.best_race_lap')
-          this.moto3RaceLapRecord,
-      @JsonKey(name: 'moto3_circuit_records.best_pole')
-          this.moto3BestPoleRecord,
-      @JsonKey(name: 'moto3_circuit_records.to_speed')
-          this.moto3TopSpeedRecord})
+      {@JsonKey(name: 'event_name') this.name,
+      @JsonKey(name: 'event_nation') this.nation,
+      @JsonKey(name: 'event_autodrome') this.autodrome,
+      @JsonKey(name: 'event_date') this.eventDate,
+      @JsonKey(name: 'short_description') this.description,
+      @JsonKey(name: 'image_circuit') this.trackImage,
+      @JsonKey(name: 'lenght_euro') this.trackLenght,
+      @JsonKey(name: 'width_euro') this.trackWidth,
+      @JsonKey(name: 'longstraight_euro') this.trackLongestStraight,
+      @JsonKey(name: 'corner_left') this.trackCornerLeft,
+      @JsonKey(name: 'corner_right') this.trackCornerRight,
+      @JsonKey(name: 'motogp_most_wins') this.motogpMostWins,
+      @JsonKey(name: 'moto2_most_wins') this.moto2MostWins,
+      @JsonKey(name: 'moto3_most_wins') this.moto3MostWins,
+      @JsonKey(name: 'motogp_most_poles') this.motogpMostPoles,
+      @JsonKey(name: 'moto2_most_poles') this.moto2MostPoles,
+      @JsonKey(name: 'moto3_most_poles') this.moto3MostPoles,
+      @JsonKey(name: 'motogp_circuit_records') this.motogpRecords,
+      @JsonKey(name: 'moto2_circuit_records') this.moto2Records,
+      @JsonKey(name: 'moto3_circuit_records') this.moto3Records})
       : super._();
 
   factory _$_CircuitDto.fromJson(Map<String, dynamic> json) =>
@@ -870,7 +435,7 @@ class _$_CircuitDto extends _CircuitDto {
   @JsonKey(name: 'event_date')
   final String eventDate;
   @override
-  @JsonKey(name: 'description')
+  @JsonKey(name: 'short_description')
   final String description;
   @override
   @JsonKey(name: 'image_circuit')
@@ -892,62 +457,35 @@ class _$_CircuitDto extends _CircuitDto {
   final String trackCornerRight;
   @override
   @JsonKey(name: 'motogp_most_wins')
-  final CircuitStatsDto motogpMostWins;
+  final List<CircuitStatsDto> motogpMostWins;
   @override
   @JsonKey(name: 'moto2_most_wins')
-  final CircuitStatsDto moto2MostWins;
+  final List<CircuitStatsDto> moto2MostWins;
   @override
   @JsonKey(name: 'moto3_most_wins')
-  final CircuitStatsDto moto3MostWins;
+  final List<CircuitStatsDto> moto3MostWins;
   @override
   @JsonKey(name: 'motogp_most_poles')
-  final CircuitStatsDto motogpMostPoles;
+  final List<CircuitStatsDto> motogpMostPoles;
   @override
   @JsonKey(name: 'moto2_most_poles')
-  final CircuitStatsDto moto2MostPoles;
+  final List<CircuitStatsDto> moto2MostPoles;
   @override
   @JsonKey(name: 'moto3_most_poles')
-  final CircuitStatsDto moto3MostPoles;
+  final List<CircuitStatsDto> moto3MostPoles;
   @override
-  @JsonKey(name: 'motogp_circuit_records.all_time_lap_record')
-  final CircuitRecordsDto motogpEverLapRecord;
+  @JsonKey(name: 'motogp_circuit_records')
+  final List<CategoryCircuitRecordsDto> motogpRecords;
   @override
-  @JsonKey(name: 'motogp_circuit_records.best_race_lap')
-  final CircuitRecordsDto motogpRaceLapRecord;
+  @JsonKey(name: 'moto2_circuit_records')
+  final List<CategoryCircuitRecordsDto> moto2Records;
   @override
-  @JsonKey(name: 'motogp_circuit_records.best_pole')
-  final CircuitRecordsDto motogpBestPoleRecord;
-  @override
-  @JsonKey(name: 'motogp_circuit_records.to_speed')
-  final CircuitRecordsDto motogpTopSpeedRecord;
-  @override
-  @JsonKey(name: 'moto2_circuit_records.all_time_lap_record')
-  final CircuitRecordsDto moto2EverLapRecord;
-  @override
-  @JsonKey(name: 'moto2_circuit_records.best_race_lap')
-  final CircuitRecordsDto moto2RaceLapRecord;
-  @override
-  @JsonKey(name: 'moto2_circuit_records.best_pole')
-  final CircuitRecordsDto moto2BestPoleRecord;
-  @override
-  @JsonKey(name: 'moto2_circuit_records.to_speed')
-  final CircuitRecordsDto moto2TopSpeedRecord;
-  @override
-  @JsonKey(name: 'moto3_circuit_records.all_time_lap_record')
-  final CircuitRecordsDto moto3EverLapRecord;
-  @override
-  @JsonKey(name: 'moto3_circuit_records.best_race_lap')
-  final CircuitRecordsDto moto3RaceLapRecord;
-  @override
-  @JsonKey(name: 'moto3_circuit_records.best_pole')
-  final CircuitRecordsDto moto3BestPoleRecord;
-  @override
-  @JsonKey(name: 'moto3_circuit_records.to_speed')
-  final CircuitRecordsDto moto3TopSpeedRecord;
+  @JsonKey(name: 'moto3_circuit_records')
+  final List<CategoryCircuitRecordsDto> moto3Records;
 
   @override
   String toString() {
-    return 'CircuitDto(name: $name, nation: $nation, autodrome: $autodrome, eventDate: $eventDate, description: $description, trackImage: $trackImage, trackLenght: $trackLenght, trackWidth: $trackWidth, trackLongestStraight: $trackLongestStraight, trackCornerLeft: $trackCornerLeft, trackCornerRight: $trackCornerRight, motogpMostWins: $motogpMostWins, moto2MostWins: $moto2MostWins, moto3MostWins: $moto3MostWins, motogpMostPoles: $motogpMostPoles, moto2MostPoles: $moto2MostPoles, moto3MostPoles: $moto3MostPoles, motogpEverLapRecord: $motogpEverLapRecord, motogpRaceLapRecord: $motogpRaceLapRecord, motogpBestPoleRecord: $motogpBestPoleRecord, motogpTopSpeedRecord: $motogpTopSpeedRecord, moto2EverLapRecord: $moto2EverLapRecord, moto2RaceLapRecord: $moto2RaceLapRecord, moto2BestPoleRecord: $moto2BestPoleRecord, moto2TopSpeedRecord: $moto2TopSpeedRecord, moto3EverLapRecord: $moto3EverLapRecord, moto3RaceLapRecord: $moto3RaceLapRecord, moto3BestPoleRecord: $moto3BestPoleRecord, moto3TopSpeedRecord: $moto3TopSpeedRecord)';
+    return 'CircuitDto(name: $name, nation: $nation, autodrome: $autodrome, eventDate: $eventDate, description: $description, trackImage: $trackImage, trackLenght: $trackLenght, trackWidth: $trackWidth, trackLongestStraight: $trackLongestStraight, trackCornerLeft: $trackCornerLeft, trackCornerRight: $trackCornerRight, motogpMostWins: $motogpMostWins, moto2MostWins: $moto2MostWins, moto3MostWins: $moto3MostWins, motogpMostPoles: $motogpMostPoles, moto2MostPoles: $moto2MostPoles, moto3MostPoles: $moto3MostPoles, motogpRecords: $motogpRecords, moto2Records: $moto2Records, moto3Records: $moto3Records)';
   }
 
   @override
@@ -1003,28 +541,15 @@ class _$_CircuitDto extends _CircuitDto {
             (identical(other.moto3MostPoles, moto3MostPoles) ||
                 const DeepCollectionEquality()
                     .equals(other.moto3MostPoles, moto3MostPoles)) &&
-            (identical(other.motogpEverLapRecord, motogpEverLapRecord) ||
+            (identical(other.motogpRecords, motogpRecords) ||
                 const DeepCollectionEquality()
-                    .equals(other.motogpEverLapRecord, motogpEverLapRecord)) &&
-            (identical(other.motogpRaceLapRecord, motogpRaceLapRecord) ||
+                    .equals(other.motogpRecords, motogpRecords)) &&
+            (identical(other.moto2Records, moto2Records) ||
                 const DeepCollectionEquality()
-                    .equals(other.motogpRaceLapRecord, motogpRaceLapRecord)) &&
-            (identical(other.motogpBestPoleRecord, motogpBestPoleRecord) ||
-                const DeepCollectionEquality().equals(
-                    other.motogpBestPoleRecord, motogpBestPoleRecord)) &&
-            (identical(other.motogpTopSpeedRecord, motogpTopSpeedRecord) ||
-                const DeepCollectionEquality().equals(
-                    other.motogpTopSpeedRecord, motogpTopSpeedRecord)) &&
-            (identical(other.moto2EverLapRecord, moto2EverLapRecord) ||
+                    .equals(other.moto2Records, moto2Records)) &&
+            (identical(other.moto3Records, moto3Records) ||
                 const DeepCollectionEquality()
-                    .equals(other.moto2EverLapRecord, moto2EverLapRecord)) &&
-            (identical(other.moto2RaceLapRecord, moto2RaceLapRecord) || const DeepCollectionEquality().equals(other.moto2RaceLapRecord, moto2RaceLapRecord)) &&
-            (identical(other.moto2BestPoleRecord, moto2BestPoleRecord) || const DeepCollectionEquality().equals(other.moto2BestPoleRecord, moto2BestPoleRecord)) &&
-            (identical(other.moto2TopSpeedRecord, moto2TopSpeedRecord) || const DeepCollectionEquality().equals(other.moto2TopSpeedRecord, moto2TopSpeedRecord)) &&
-            (identical(other.moto3EverLapRecord, moto3EverLapRecord) || const DeepCollectionEquality().equals(other.moto3EverLapRecord, moto3EverLapRecord)) &&
-            (identical(other.moto3RaceLapRecord, moto3RaceLapRecord) || const DeepCollectionEquality().equals(other.moto3RaceLapRecord, moto3RaceLapRecord)) &&
-            (identical(other.moto3BestPoleRecord, moto3BestPoleRecord) || const DeepCollectionEquality().equals(other.moto3BestPoleRecord, moto3BestPoleRecord)) &&
-            (identical(other.moto3TopSpeedRecord, moto3TopSpeedRecord) || const DeepCollectionEquality().equals(other.moto3TopSpeedRecord, moto3TopSpeedRecord)));
+                    .equals(other.moto3Records, moto3Records)));
   }
 
   @override
@@ -1047,18 +572,9 @@ class _$_CircuitDto extends _CircuitDto {
       const DeepCollectionEquality().hash(motogpMostPoles) ^
       const DeepCollectionEquality().hash(moto2MostPoles) ^
       const DeepCollectionEquality().hash(moto3MostPoles) ^
-      const DeepCollectionEquality().hash(motogpEverLapRecord) ^
-      const DeepCollectionEquality().hash(motogpRaceLapRecord) ^
-      const DeepCollectionEquality().hash(motogpBestPoleRecord) ^
-      const DeepCollectionEquality().hash(motogpTopSpeedRecord) ^
-      const DeepCollectionEquality().hash(moto2EverLapRecord) ^
-      const DeepCollectionEquality().hash(moto2RaceLapRecord) ^
-      const DeepCollectionEquality().hash(moto2BestPoleRecord) ^
-      const DeepCollectionEquality().hash(moto2TopSpeedRecord) ^
-      const DeepCollectionEquality().hash(moto3EverLapRecord) ^
-      const DeepCollectionEquality().hash(moto3RaceLapRecord) ^
-      const DeepCollectionEquality().hash(moto3BestPoleRecord) ^
-      const DeepCollectionEquality().hash(moto3TopSpeedRecord);
+      const DeepCollectionEquality().hash(motogpRecords) ^
+      const DeepCollectionEquality().hash(moto2Records) ^
+      const DeepCollectionEquality().hash(moto3Records);
 
   @override
   _$CircuitDtoCopyWith<_CircuitDto> get copyWith =>
@@ -1081,7 +597,7 @@ abstract class _CircuitDto extends CircuitDto {
           String autodrome,
       @JsonKey(name: 'event_date')
           String eventDate,
-      @JsonKey(name: 'description')
+      @JsonKey(name: 'short_description')
           String description,
       @JsonKey(name: 'image_circuit')
           String trackImage,
@@ -1096,41 +612,23 @@ abstract class _CircuitDto extends CircuitDto {
       @JsonKey(name: 'corner_right')
           String trackCornerRight,
       @JsonKey(name: 'motogp_most_wins')
-          CircuitStatsDto motogpMostWins,
+          List<CircuitStatsDto> motogpMostWins,
       @JsonKey(name: 'moto2_most_wins')
-          CircuitStatsDto moto2MostWins,
+          List<CircuitStatsDto> moto2MostWins,
       @JsonKey(name: 'moto3_most_wins')
-          CircuitStatsDto moto3MostWins,
+          List<CircuitStatsDto> moto3MostWins,
       @JsonKey(name: 'motogp_most_poles')
-          CircuitStatsDto motogpMostPoles,
+          List<CircuitStatsDto> motogpMostPoles,
       @JsonKey(name: 'moto2_most_poles')
-          CircuitStatsDto moto2MostPoles,
+          List<CircuitStatsDto> moto2MostPoles,
       @JsonKey(name: 'moto3_most_poles')
-          CircuitStatsDto moto3MostPoles,
-      @JsonKey(name: 'motogp_circuit_records.all_time_lap_record')
-          CircuitRecordsDto motogpEverLapRecord,
-      @JsonKey(name: 'motogp_circuit_records.best_race_lap')
-          CircuitRecordsDto motogpRaceLapRecord,
-      @JsonKey(name: 'motogp_circuit_records.best_pole')
-          CircuitRecordsDto motogpBestPoleRecord,
-      @JsonKey(name: 'motogp_circuit_records.to_speed')
-          CircuitRecordsDto motogpTopSpeedRecord,
-      @JsonKey(name: 'moto2_circuit_records.all_time_lap_record')
-          CircuitRecordsDto moto2EverLapRecord,
-      @JsonKey(name: 'moto2_circuit_records.best_race_lap')
-          CircuitRecordsDto moto2RaceLapRecord,
-      @JsonKey(name: 'moto2_circuit_records.best_pole')
-          CircuitRecordsDto moto2BestPoleRecord,
-      @JsonKey(name: 'moto2_circuit_records.to_speed')
-          CircuitRecordsDto moto2TopSpeedRecord,
-      @JsonKey(name: 'moto3_circuit_records.all_time_lap_record')
-          CircuitRecordsDto moto3EverLapRecord,
-      @JsonKey(name: 'moto3_circuit_records.best_race_lap')
-          CircuitRecordsDto moto3RaceLapRecord,
-      @JsonKey(name: 'moto3_circuit_records.best_pole')
-          CircuitRecordsDto moto3BestPoleRecord,
-      @JsonKey(name: 'moto3_circuit_records.to_speed')
-          CircuitRecordsDto moto3TopSpeedRecord}) = _$_CircuitDto;
+          List<CircuitStatsDto> moto3MostPoles,
+      @JsonKey(name: 'motogp_circuit_records')
+          List<CategoryCircuitRecordsDto> motogpRecords,
+      @JsonKey(name: 'moto2_circuit_records')
+          List<CategoryCircuitRecordsDto> moto2Records,
+      @JsonKey(name: 'moto3_circuit_records')
+          List<CategoryCircuitRecordsDto> moto3Records}) = _$_CircuitDto;
 
   factory _CircuitDto.fromJson(Map<String, dynamic> json) =
       _$_CircuitDto.fromJson;
@@ -1148,7 +646,7 @@ abstract class _CircuitDto extends CircuitDto {
   @JsonKey(name: 'event_date')
   String get eventDate;
   @override
-  @JsonKey(name: 'description')
+  @JsonKey(name: 'short_description')
   String get description;
   @override
   @JsonKey(name: 'image_circuit')
@@ -1170,58 +668,31 @@ abstract class _CircuitDto extends CircuitDto {
   String get trackCornerRight;
   @override
   @JsonKey(name: 'motogp_most_wins')
-  CircuitStatsDto get motogpMostWins;
+  List<CircuitStatsDto> get motogpMostWins;
   @override
   @JsonKey(name: 'moto2_most_wins')
-  CircuitStatsDto get moto2MostWins;
+  List<CircuitStatsDto> get moto2MostWins;
   @override
   @JsonKey(name: 'moto3_most_wins')
-  CircuitStatsDto get moto3MostWins;
+  List<CircuitStatsDto> get moto3MostWins;
   @override
   @JsonKey(name: 'motogp_most_poles')
-  CircuitStatsDto get motogpMostPoles;
+  List<CircuitStatsDto> get motogpMostPoles;
   @override
   @JsonKey(name: 'moto2_most_poles')
-  CircuitStatsDto get moto2MostPoles;
+  List<CircuitStatsDto> get moto2MostPoles;
   @override
   @JsonKey(name: 'moto3_most_poles')
-  CircuitStatsDto get moto3MostPoles;
+  List<CircuitStatsDto> get moto3MostPoles;
   @override
-  @JsonKey(name: 'motogp_circuit_records.all_time_lap_record')
-  CircuitRecordsDto get motogpEverLapRecord;
+  @JsonKey(name: 'motogp_circuit_records')
+  List<CategoryCircuitRecordsDto> get motogpRecords;
   @override
-  @JsonKey(name: 'motogp_circuit_records.best_race_lap')
-  CircuitRecordsDto get motogpRaceLapRecord;
+  @JsonKey(name: 'moto2_circuit_records')
+  List<CategoryCircuitRecordsDto> get moto2Records;
   @override
-  @JsonKey(name: 'motogp_circuit_records.best_pole')
-  CircuitRecordsDto get motogpBestPoleRecord;
-  @override
-  @JsonKey(name: 'motogp_circuit_records.to_speed')
-  CircuitRecordsDto get motogpTopSpeedRecord;
-  @override
-  @JsonKey(name: 'moto2_circuit_records.all_time_lap_record')
-  CircuitRecordsDto get moto2EverLapRecord;
-  @override
-  @JsonKey(name: 'moto2_circuit_records.best_race_lap')
-  CircuitRecordsDto get moto2RaceLapRecord;
-  @override
-  @JsonKey(name: 'moto2_circuit_records.best_pole')
-  CircuitRecordsDto get moto2BestPoleRecord;
-  @override
-  @JsonKey(name: 'moto2_circuit_records.to_speed')
-  CircuitRecordsDto get moto2TopSpeedRecord;
-  @override
-  @JsonKey(name: 'moto3_circuit_records.all_time_lap_record')
-  CircuitRecordsDto get moto3EverLapRecord;
-  @override
-  @JsonKey(name: 'moto3_circuit_records.best_race_lap')
-  CircuitRecordsDto get moto3RaceLapRecord;
-  @override
-  @JsonKey(name: 'moto3_circuit_records.best_pole')
-  CircuitRecordsDto get moto3BestPoleRecord;
-  @override
-  @JsonKey(name: 'moto3_circuit_records.to_speed')
-  CircuitRecordsDto get moto3TopSpeedRecord;
+  @JsonKey(name: 'moto3_circuit_records')
+  List<CategoryCircuitRecordsDto> get moto3Records;
   @override
   _$CircuitDtoCopyWith<_CircuitDto> get copyWith;
 }

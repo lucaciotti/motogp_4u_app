@@ -44,7 +44,32 @@ extension CircuitRecordsDtoX on CircuitRecordsDto {
       riderNum: riderNum,
       riderTeam: riderTeam,
       timeValue: value.time,
-      speedValue: int.parse(value.speed),
+      speedValue: double.parse(value.speed),
     );
   }
+}
+
+// Due to json file structure, the class below becomes very usefull"!!!
+
+@freezed
+abstract class CategoryCircuitRecordsDto with _$CategoryCircuitRecordsDto {
+  const factory CategoryCircuitRecordsDto({
+    @JsonKey(name: 'all_time_lap_record') CircuitRecordsDto allTimeRecord,
+    @JsonKey(name: 'best_race_lap') CircuitRecordsDto bestRaceRecord,
+    @JsonKey(name: 'best_pole') CircuitRecordsDto bestPoleRecord,
+    @JsonKey(name: 'top_speed') CircuitRecordsDto topSpeedRecord,
+  }) = _CategoryCircuitRecordsDto;
+
+  factory CategoryCircuitRecordsDto.fromJson(Map<String, dynamic> json) =>
+      _$CategoryCircuitRecordsDtoFromJson(json);
+}
+
+@freezed
+abstract class MapCircuitRecordsDto with _$MapCircuitRecordsDto {
+  const factory MapCircuitRecordsDto({
+    Map<String, CircuitRecordsDto> namedRecord,
+  }) = _MapCircuitRecordsDto;
+
+  factory MapCircuitRecordsDto.fromJson(Map<String, dynamic> json) =>
+      _$MapCircuitRecordsDtoFromJson(json);
 }
