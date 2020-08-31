@@ -45,15 +45,7 @@ class HomePage extends StatelessWidget {
         length: 3,
         child: Scaffold(
           appBar: AppBar(
-            title: const Text('MotoGP-4U'),
-            actions: [
-              const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: CircleAvatar(
-                  backgroundColor: Colors.white54,
-                ),
-              ),
-            ],
+            title: const Text('MotoSportGP'),
           ),
           body: TabBarView(
             children: _screens,

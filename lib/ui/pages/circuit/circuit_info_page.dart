@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+
 import 'package:motogp_4u_app/app/bloc/circuit/circuit_bloc.dart';
 import 'package:motogp_4u_app/code/injectable/injection.dart';
+import 'package:motogp_4u_app/ui/pages/circuit/screens/circuit_header_screen.dart';
+import 'package:motogp_4u_app/ui/pages/circuit/screens/circuit_tabs_screen.dart';
 
-class CircuitInfoPage extends StatelessWidget {
+class CircuitInfoPage extends HookWidget {
   final String circuitSubLink;
-  const CircuitInfoPage({Key key, this.circuitSubLink}) : super(key: key);
+  final String circuitImage;
+  final String circuitName;
+  const CircuitInfoPage({
+    Key key,
+    @required this.circuitSubLink,
+    @required this.circuitImage,
+    @required this.circuitName,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,28 +26,16 @@ class CircuitInfoPage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Circuit Info'),
-          actions: [
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: CircleAvatar(
-                backgroundColor: Colors.white54,
-              ),
-            ),
-          ],
         ),
-        body: BlocBuilder<CircuitBloc, CircuitState>(
-          builder: (context, state) {
-            return state.maybeMap(
-              loadSuccess: (state) {
-                return Center(
-                  child: Text(state.circuitInfo.description),
-                );
-              },
-              orElse: () => const Center(
-                child: CircularProgressIndicator(),
-              ),
-            );
-          },
+        body: ListView(
+          children: [
+            CircuitHeaderScreen(
+              circuitName: circuitName,
+              circuitSubLink: circuitSubLink,
+              circuitImage: circuitImage,
+            ),
+            const CircuitTabsScreen(),
+          ],
         ),
       ),
     );

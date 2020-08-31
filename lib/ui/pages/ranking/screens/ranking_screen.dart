@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:motogp_4u_app/app/bloc/ranking/ranking_bloc.dart';
 import 'package:motogp_4u_app/code/core/entity/ranking/rank_position.dart';
 import 'package:motogp_4u_app/code/core/entity/ranking/ranking.dart';
-import 'package:motogp_4u_app/ui/pages/ranking/components/dropdown_select_box.dart';
+import 'package:motogp_4u_app/ui/shared/dropdown_select/dropdown_select_box.dart';
 import 'package:motogp_4u_app/ui/pages/ranking/components/listtile_rank.dart';
 
 class RankingScreen extends StatelessWidget {

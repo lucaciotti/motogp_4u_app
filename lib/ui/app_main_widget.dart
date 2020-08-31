@@ -1,8 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'package:motogp_4u_app/code/injectable/injection.dart';
 import 'package:motogp_4u_app/ui/routes/router.gr.dart';
 import 'package:motogp_4u_app/ui/theme/style.dart';
 

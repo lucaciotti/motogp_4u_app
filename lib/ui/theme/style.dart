@@ -35,22 +35,23 @@ ThemeData appTheme(BuildContext context) {
 
 ThemeData appTheme2(BuildContext context) {
   return ThemeData.light().copyWith(
-    primaryColor: Colors.black,
-    accentColor: Colors.red,
-    primaryTextTheme: TextTheme(headline6: TextStyle(color: Colors.black)),
-    appBarTheme: ThemeData.light().appBarTheme.copyWith(
+    // primaryColor: Colors.black,
+    // accentColor: Colors.red,
+    primaryTextTheme:
+        TextTheme(headline6: TextStyle(color: Colors.deepOrange[900])),
+    appBarTheme: ThemeData.dark().appBarTheme.copyWith(
           centerTitle: true,
-          color: Colors.grey[300],
+          color: Colors.grey[800],
           elevation: 5,
         ),
-    floatingActionButtonTheme: FloatingActionButtonThemeData(
-      backgroundColor: Colors.blue[900],
-      foregroundColor: Colors.white,
-    ),
-    inputDecorationTheme: InputDecorationTheme(
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8),
-      ),
-    ),
+    // floatingActionButtonTheme: FloatingActionButtonThemeData(
+    //   backgroundColor: Colors.blue[900],
+    //   foregroundColor: Colors.white,
+    // ),
+    // inputDecorationTheme: InputDecorationTheme(
+    //   border: OutlineInputBorder(
+    //     borderRadius: BorderRadius.circular(8),
+    //   ),
+    // ),
   );
 }

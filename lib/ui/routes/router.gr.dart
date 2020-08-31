@@ -38,13 +38,13 @@ class Router extends RouterBase {
       );
     },
     CircuitInfoPage: (data) {
-      final args = data.getArgs<CircuitInfoPageArguments>(
-        orElse: () => CircuitInfoPageArguments(),
-      );
+      final args = data.getArgs<CircuitInfoPageArguments>(nullOk: false);
       return MaterialPageRoute<dynamic>(
         builder: (context) => CircuitInfoPage(
           key: args.key,
           circuitSubLink: args.circuitSubLink,
+          circuitImage: args.circuitImage,
+          circuitName: args.circuitName,
         ),
         settings: data,
       );
@@ -61,12 +61,17 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
 
   Future<dynamic> pushCircuitInfoPage({
     Key key,
-    String circuitSubLink,
+    @required String circuitSubLink,
+    @required String circuitImage,
+    @required String circuitName,
   }) =>
       push<dynamic>(
         Routes.circuitInfoPage,
-        arguments:
-            CircuitInfoPageArguments(key: key, circuitSubLink: circuitSubLink),
+        arguments: CircuitInfoPageArguments(
+            key: key,
+            circuitSubLink: circuitSubLink,
+            circuitImage: circuitImage,
+            circuitName: circuitName),
       );
 }
 
@@ -78,5 +83,11 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
 class CircuitInfoPageArguments {
   final Key key;
   final String circuitSubLink;
-  CircuitInfoPageArguments({this.key, this.circuitSubLink});
+  final String circuitImage;
+  final String circuitName;
+  CircuitInfoPageArguments(
+      {this.key,
+      @required this.circuitSubLink,
+      @required this.circuitImage,
+      @required this.circuitName});
 }
