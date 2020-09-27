@@ -243,14 +243,14 @@ packages:
       name: flutter_bloc
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.0.1"
+    version: "6.0.5"
   flutter_hooks:
     dependency: "direct main"
     description:
       name: flutter_hooks
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.13.1"
+    version: "0.14.0"
   flutter_svg:
     dependency: "direct main"
     description:
@@ -269,7 +269,7 @@ packages:
       name: freezed
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.11.5"
+    version: "0.11.6"
   freezed_annotation:
     dependency: "direct main"
     description:
@@ -367,7 +367,7 @@ packages:
       name: json_serializable
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.4.0"
+    version: "3.4.1"
   lint:
     dependency: "direct dev"
     description:
@@ -389,6 +389,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.12.8"
+  material_design_icons_flutter:
+    dependency: "direct main"
+    description:
+      name: material_design_icons_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.5655"
   meta:
     dependency: transitive
     description:
@@ -603,7 +610,7 @@ packages:
       name: uuid
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.2.0"
+    version: "2.2.2"
   vector_math:
     dependency: transitive
     description:

@@ -6,7 +6,7 @@
         "**/CVS": true,
         "**/.DS_Store": true,
         "**/*.freezed.dart": true,
-        "**/*.g.dart": false,
+        "**/*.g.dart": true,
         "**/*.gr.dart": true,
         "**/.dart-tool": true,
         "**/.idea": true,

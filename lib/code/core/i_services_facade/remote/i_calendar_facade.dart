@@ -4,4 +4,6 @@ import 'package:motogp_4u_app/code/core/failure/service_failure/remote/http_fail
 
 abstract class ICalendarFacade {
   Future<Either<HttpFailure, List<CalendarEvent>>> getCalendarEvents();
+  Future<Either<HttpFailure, CalendarEvent>> getNextEvent();
+  Future<Either<HttpFailure, CalendarEvent>> getPreviousEvent();
 }

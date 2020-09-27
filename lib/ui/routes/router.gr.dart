@@ -9,15 +9,21 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../pages/calendar/calendar_page.dart';
 import '../pages/circuit/circuit_info_page.dart';
 import '../pages/home/home_page.dart';
+import '../pages/session/session_page.dart';
 
 class Routes {
   static const String homePage = '/';
+  static const String calendarPage = '/calendar-page';
   static const String circuitInfoPage = '/circuit-info-page';
+  static const String sessionPage = '/session-page';
   static const all = <String>{
     homePage,
+    calendarPage,
     circuitInfoPage,
+    sessionPage,
   };
 }
 
@@ -26,7 +32,9 @@ class Router extends RouterBase {
   List<RouteDef> get routes => _routes;
   final _routes = <RouteDef>[
     RouteDef(Routes.homePage, page: HomePage),
+    RouteDef(Routes.calendarPage, page: CalendarPage),
     RouteDef(Routes.circuitInfoPage, page: CircuitInfoPage),
+    RouteDef(Routes.sessionPage, page: SessionPage),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -34,6 +42,12 @@ class Router extends RouterBase {
     HomePage: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => const HomePage(),
+        settings: data,
+      );
+    },
+    CalendarPage: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => const CalendarPage(),
         settings: data,
       );
     },
@@ -49,6 +63,19 @@ class Router extends RouterBase {
         settings: data,
       );
     },
+    SessionPage: (data) {
+      final args = data.getArgs<SessionPageArguments>(nullOk: false);
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => SessionPage(
+          key: args.key,
+          circuitSubLink: args.circuitSubLink,
+          circuitImage: args.circuitImage,
+          circuitName: args.circuitName,
+          shortName: args.shortName,
+        ),
+        settings: data,
+      );
+    },
   };
 }
 
@@ -58,6 +85,8 @@ class Router extends RouterBase {
 
 extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
   Future<dynamic> pushHomePage() => push<dynamic>(Routes.homePage);
+
+  Future<dynamic> pushCalendarPage() => push<dynamic>(Routes.calendarPage);
 
   Future<dynamic> pushCircuitInfoPage({
     Key key,
@@ -72,6 +101,23 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
             circuitSubLink: circuitSubLink,
             circuitImage: circuitImage,
             circuitName: circuitName),
+      );
+
+  Future<dynamic> pushSessionPage({
+    Key key,
+    @required String circuitSubLink,
+    @required String circuitImage,
+    @required String circuitName,
+    @required String shortName,
+  }) =>
+      push<dynamic>(
+        Routes.sessionPage,
+        arguments: SessionPageArguments(
+            key: key,
+            circuitSubLink: circuitSubLink,
+            circuitImage: circuitImage,
+            circuitName: circuitName,
+            shortName: shortName),
       );
 }
 
@@ -90,4 +136,19 @@ class CircuitInfoPageArguments {
       @required this.circuitSubLink,
       @required this.circuitImage,
       @required this.circuitName});
+}
+
+/// SessionPage arguments holder class
+class SessionPageArguments {
+  final Key key;
+  final String circuitSubLink;
+  final String circuitImage;
+  final String circuitName;
+  final String shortName;
+  SessionPageArguments(
+      {this.key,
+      @required this.circuitSubLink,
+      @required this.circuitImage,
+      @required this.circuitName,
+      @required this.shortName});
 }

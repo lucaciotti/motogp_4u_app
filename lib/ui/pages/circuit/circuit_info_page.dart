@@ -6,6 +6,7 @@ import 'package:motogp_4u_app/app/bloc/circuit/circuit_bloc.dart';
 import 'package:motogp_4u_app/code/injectable/injection.dart';
 import 'package:motogp_4u_app/ui/pages/circuit/screens/circuit_header_screen.dart';
 import 'package:motogp_4u_app/ui/pages/circuit/screens/circuit_tabs_screen.dart';
+import 'package:motogp_4u_app/ui/shared/appbar/default_appbar.dart';
 
 class CircuitInfoPage extends HookWidget {
   final String circuitSubLink;
@@ -24,9 +25,7 @@ class CircuitInfoPage extends HookWidget {
       create: (context) => getIt<CircuitBloc>()
         ..add(CircuitEvent.fetchCircuitInfo(circuitSubLink)),
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Circuit Info'),
-        ),
+        appBar: DefaultAppBar(titleText: "Circuit Info"),
         body: ListView(
           children: [
             CircuitHeaderScreen(

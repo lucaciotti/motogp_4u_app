@@ -58,12 +58,13 @@ extension CircuitDtoX on CircuitDto {
       trackLongestStraight: trackLongestStraight,
       trackCornerLeft: trackCornerLeft,
       trackCornerRight: trackCornerRight,
-      motogpMostWins: motogpMostWins.map((each) => each.toEntity()).toList(),
-      moto2MostWins: moto2MostWins.map((each) => each.toEntity()).toList(),
-      moto3MostWins: moto3MostWins.map((each) => each.toEntity()).toList(),
-      motogpMostPoles: motogpMostPoles.map((each) => each.toEntity()).toList(),
-      moto2MostPoles: moto2MostPoles.map((each) => each.toEntity()).toList(),
-      moto3MostPoles: moto3MostPoles.map((each) => each.toEntity()).toList(),
+      motogpMostWins: motogpMostWins?.map((each) => each.toEntity())?.toList(),
+      moto2MostWins: moto2MostWins?.map((each) => each.toEntity())?.toList(),
+      moto3MostWins: moto3MostWins?.map((each) => each.toEntity())?.toList(),
+      motogpMostPoles:
+          motogpMostPoles?.map((each) => each.toEntity())?.toList(),
+      moto2MostPoles: moto2MostPoles?.map((each) => each.toEntity())?.toList(),
+      moto3MostPoles: moto3MostPoles?.map((each) => each.toEntity())?.toList(),
       motogpEverLapRecord: motogpRecords
           ?.firstWhere((element) => element.allTimeRecord != null)
           ?.allTimeRecord

@@ -22,19 +22,20 @@ class CircuitRepository implements ICircuitFacade {
     try {
       final Response res =
           await _dioProvider.get("$_hostName/circuit$circuitSubLink");
-      final Map jsonData = res.data as Map;
-      final int statusCode = res.statusCode;
-      // print(_hostName + "/calendar");
-      // print(jsonData);
 
+      final int statusCode = res.statusCode;
       if (statusCode != 200) return left(const HttpFailure.serverError());
+
+      if (res.data == null) return left(const HttpFailure.emptyResult());
+      final Map jsonData = res.data as Map;
+      if (jsonData == null) return left(const HttpFailure.emptyResult());
       if (jsonData.isEmpty) return left(const HttpFailure.emptyResult());
 
       return right(
         CircuitDto.fromJson(jsonData as Map<String, dynamic>).toEntity(),
       );
     } on Exception catch (e) {
-      print(e.toString());
+      // print(e.toString());
       return left(const HttpFailure.unknownError());
     }
   }

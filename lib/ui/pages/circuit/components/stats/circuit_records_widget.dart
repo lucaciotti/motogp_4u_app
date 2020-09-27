@@ -29,9 +29,10 @@ class CircuitRecordsWidget extends StatelessWidget {
         ),
         CarouselSlider(
           options: CarouselOptions(
+              // autoPlay: true,
               enableInfiniteScroll: false,
               viewportFraction: 1,
-              aspectRatio: 22 / 9),
+              aspectRatio: 21 / 9),
           items: [
             CardStatsRecords(
               circuit: circuit,

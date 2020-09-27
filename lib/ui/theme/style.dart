@@ -37,13 +37,20 @@ ThemeData appTheme2(BuildContext context) {
   return ThemeData.light().copyWith(
     // primaryColor: Colors.black,
     // accentColor: Colors.red,
-    primaryTextTheme:
-        TextTheme(headline6: TextStyle(color: Colors.deepOrange[900])),
+    // primaryTextTheme:
+    //     TextTheme(headline6: TextStyle(color: Colors.deepOrange[900])),
     appBarTheme: ThemeData.dark().appBarTheme.copyWith(
           centerTitle: true,
           color: Colors.grey[800],
           elevation: 5,
         ),
+    textTheme: ThemeData.light().textTheme.apply(fontFamily: 'PTSans'),
+    primaryTextTheme: ThemeData.light()
+        .primaryTextTheme
+        // .copyWith(headline6: TextStyle(color: Colors.deepOrange[900]))
+        .apply(fontFamily: 'OpenSans'),
+    accentTextTheme:
+        ThemeData.light().accentTextTheme.apply(fontFamily: 'PTSans'),
     // floatingActionButtonTheme: FloatingActionButtonThemeData(
     //   backgroundColor: Colors.blue[900],
     //   foregroundColor: Colors.white,

@@ -127,7 +127,12 @@ class CalendarCard extends StatelessWidget {
                 Expanded(
                   child: FlatButton(
                     onPressed: () {
-                      // Perform some action
+                      ExtendedNavigator.of(context).pushSessionPage(
+                        circuitSubLink: event.circuitLinkName,
+                        circuitImage: event.networkImage.getOrCrash(),
+                        circuitName: event.name,
+                        shortName: event.shortName.getOrCrash(),
+                      );
                     },
                     child: const Text('RACE STATS.'),
                   ),
