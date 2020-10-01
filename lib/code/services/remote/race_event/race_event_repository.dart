@@ -16,10 +16,12 @@ import 'package:motogp_4u_app/code/services/dtos/race_event/race_session_live_co
 import 'package:motogp_4u_app/code/services/dtos/race_event/race_session_live_commentary_dto.dart';
 import 'package:motogp_4u_app/code/services/dtos/race_event/race_session_live_stand_dto.dart';
 import 'package:motogp_4u_app/code/services/dtos/race_event/race_session_live_standing_dto.dart';
+import 'package:translator/translator.dart';
 
 @LazySingleton(as: IRaceFacade)
 class RaceEventRepocitory implements IRaceFacade {
   final Dio _dioProvider;
+  final translator = GoogleTranslator();
   static const String _skyHostName =
       "https://cache.sky.it/tetractis/statistiche/live/motori/json/";
 
@@ -96,7 +98,9 @@ class RaceEventRepocitory implements IRaceFacade {
       return right(
         RaceSessionLiveCommentaryDto.fromJson(jsonData as Map<String, dynamic>)
             .commentList
-            .map((comment) => comment.toEntity())
+            .map(
+              (comment) => comment.toEntity(),
+            )
             .toList(),
       );
     } on Exception catch (e) {
@@ -131,3 +135,11 @@ class RaceEventRepocitory implements IRaceFacade {
     }
   }
 }
+
+// .map(
+//           (element) async {
+//             element.copyWith(
+//                 comment: await translator
+//                     .translate(element.comment, from: 'it')
+//                     .then((value) => value.text));
+//           },

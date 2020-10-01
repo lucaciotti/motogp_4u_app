@@ -18,7 +18,7 @@ _$_RaceSessionItemDto _$_$_RaceSessionItemDtoFromJson(
     localStartTime: json['time_local'] as String,
     localEndTime: json['time_end'] as String,
     time: json['time'] as String,
-    category: json['speciality'] as String,
+    category: json['specialty'] as String,
     live: json['current'] as String,
     status: json['status'] as String,
   );
@@ -36,7 +36,7 @@ Map<String, dynamic> _$_$_RaceSessionItemDtoToJson(
       'time_local': instance.localStartTime,
       'time_end': instance.localEndTime,
       'time': instance.time,
-      'speciality': instance.category,
+      'specialty': instance.category,
       'current': instance.live,
       'status': instance.status,
     };

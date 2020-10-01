@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import '../pages/calendar/calendar_page.dart';
 import '../pages/circuit/circuit_info_page.dart';
 import '../pages/home/home_page.dart';
+import '../pages/race_live/race_live_page.dart';
 import '../pages/session/session_page.dart';
 
 class Routes {
@@ -19,11 +20,13 @@ class Routes {
   static const String calendarPage = '/calendar-page';
   static const String circuitInfoPage = '/circuit-info-page';
   static const String sessionPage = '/session-page';
+  static const String raceLivePage = '/race-live-page';
   static const all = <String>{
     homePage,
     calendarPage,
     circuitInfoPage,
     sessionPage,
+    raceLivePage,
   };
 }
 
@@ -35,6 +38,7 @@ class Router extends RouterBase {
     RouteDef(Routes.calendarPage, page: CalendarPage),
     RouteDef(Routes.circuitInfoPage, page: CircuitInfoPage),
     RouteDef(Routes.sessionPage, page: SessionPage),
+    RouteDef(Routes.raceLivePage, page: RaceLivePage),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -72,6 +76,21 @@ class Router extends RouterBase {
           circuitImage: args.circuitImage,
           circuitName: args.circuitName,
           shortName: args.shortName,
+          eventNumber: args.eventNumber,
+        ),
+        settings: data,
+      );
+    },
+    RaceLivePage: (data) {
+      final args = data.getArgs<RaceLivePageArguments>(nullOk: false);
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => RaceLivePage(
+          key: args.key,
+          year: args.year,
+          category: args.category,
+          raceId: args.raceId,
+          sessionId: args.sessionId,
+          codeLang: args.codeLang,
         ),
         settings: data,
       );
@@ -109,6 +128,7 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
     @required String circuitImage,
     @required String circuitName,
     @required String shortName,
+    @required int eventNumber,
   }) =>
       push<dynamic>(
         Routes.sessionPage,
@@ -117,7 +137,27 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
             circuitSubLink: circuitSubLink,
             circuitImage: circuitImage,
             circuitName: circuitName,
-            shortName: shortName),
+            shortName: shortName,
+            eventNumber: eventNumber),
+      );
+
+  Future<dynamic> pushRaceLivePage({
+    Key key,
+    @required String year,
+    @required String category,
+    @required int raceId,
+    @required int sessionId,
+    @required String codeLang,
+  }) =>
+      push<dynamic>(
+        Routes.raceLivePage,
+        arguments: RaceLivePageArguments(
+            key: key,
+            year: year,
+            category: category,
+            raceId: raceId,
+            sessionId: sessionId,
+            codeLang: codeLang),
       );
 }
 
@@ -145,10 +185,29 @@ class SessionPageArguments {
   final String circuitImage;
   final String circuitName;
   final String shortName;
+  final int eventNumber;
   SessionPageArguments(
       {this.key,
       @required this.circuitSubLink,
       @required this.circuitImage,
       @required this.circuitName,
-      @required this.shortName});
+      @required this.shortName,
+      @required this.eventNumber});
+}
+
+/// RaceLivePage arguments holder class
+class RaceLivePageArguments {
+  final Key key;
+  final String year;
+  final String category;
+  final int raceId;
+  final int sessionId;
+  final String codeLang;
+  RaceLivePageArguments(
+      {this.key,
+      @required this.year,
+      @required this.category,
+      @required this.raceId,
+      @required this.sessionId,
+      @required this.codeLang});
 }

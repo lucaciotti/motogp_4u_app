@@ -26,7 +26,7 @@ class _$RaceSessionItemDtoTearOff {
       @required @JsonKey(name: 'time_local') String localStartTime,
       @required @JsonKey(name: 'time_end') String localEndTime,
       @JsonKey(name: 'time') String time,
-      @required @JsonKey(name: 'speciality') String category,
+      @required @JsonKey(name: 'specialty') String category,
       @required @JsonKey(name: 'current') String live,
       @required @JsonKey(name: 'status') String status}) {
     return _RaceSessionItemDto(
@@ -68,7 +68,7 @@ mixin _$RaceSessionItemDto {
   String get localEndTime;
   @JsonKey(name: 'time')
   String get time;
-  @JsonKey(name: 'speciality')
+  @JsonKey(name: 'specialty')
   String get category;
   @JsonKey(name: 'current')
   String get live;
@@ -93,7 +93,7 @@ abstract class $RaceSessionItemDtoCopyWith<$Res> {
       @JsonKey(name: 'time_local') String localStartTime,
       @JsonKey(name: 'time_end') String localEndTime,
       @JsonKey(name: 'time') String time,
-      @JsonKey(name: 'speciality') String category,
+      @JsonKey(name: 'specialty') String category,
       @JsonKey(name: 'current') String live,
       @JsonKey(name: 'status') String status});
 }
@@ -163,7 +163,7 @@ abstract class _$RaceSessionItemDtoCopyWith<$Res>
       @JsonKey(name: 'time_local') String localStartTime,
       @JsonKey(name: 'time_end') String localEndTime,
       @JsonKey(name: 'time') String time,
-      @JsonKey(name: 'speciality') String category,
+      @JsonKey(name: 'specialty') String category,
       @JsonKey(name: 'current') String live,
       @JsonKey(name: 'status') String status});
 }
@@ -231,7 +231,7 @@ class _$_RaceSessionItemDto implements _RaceSessionItemDto {
       @required @JsonKey(name: 'time_local') this.localStartTime,
       @required @JsonKey(name: 'time_end') this.localEndTime,
       @JsonKey(name: 'time') this.time,
-      @required @JsonKey(name: 'speciality') this.category,
+      @required @JsonKey(name: 'specialty') this.category,
       @required @JsonKey(name: 'current') this.live,
       @required @JsonKey(name: 'status') this.status})
       : assert(sequence != null),
@@ -277,7 +277,7 @@ class _$_RaceSessionItemDto implements _RaceSessionItemDto {
   @JsonKey(name: 'time')
   final String time;
   @override
-  @JsonKey(name: 'speciality')
+  @JsonKey(name: 'specialty')
   final String category;
   @override
   @JsonKey(name: 'current')
@@ -384,7 +384,7 @@ abstract class _RaceSessionItemDto implements RaceSessionItemDto {
       @JsonKey(name: 'time')
           String time,
       @required
-      @JsonKey(name: 'speciality')
+      @JsonKey(name: 'specialty')
           String category,
       @required
       @JsonKey(name: 'current')
@@ -424,7 +424,7 @@ abstract class _RaceSessionItemDto implements RaceSessionItemDto {
   @JsonKey(name: 'time')
   String get time;
   @override
-  @JsonKey(name: 'speciality')
+  @JsonKey(name: 'specialty')
   String get category;
   @override
   @JsonKey(name: 'current')

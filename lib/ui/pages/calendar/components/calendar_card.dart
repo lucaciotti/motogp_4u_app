@@ -132,6 +132,7 @@ class CalendarCard extends StatelessWidget {
                         circuitImage: event.networkImage.getOrCrash(),
                         circuitName: event.name,
                         shortName: event.shortName.getOrCrash(),
+                        eventNumber: event.eventNumber,
                       );
                     },
                     child: const Text('RACE STATS.'),

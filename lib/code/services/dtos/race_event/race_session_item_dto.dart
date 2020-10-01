@@ -18,7 +18,7 @@ abstract class RaceSessionItemDto with _$RaceSessionItemDto {
     @JsonKey(name: 'time_local') @required String localStartTime,
     @JsonKey(name: 'time_end') @required String localEndTime,
     @JsonKey(name: 'time') String time,
-    @JsonKey(name: 'speciality') @required String category,
+    @JsonKey(name: 'specialty') @required String category,
     @JsonKey(name: 'current') @required String live,
     @JsonKey(name: 'status') @required String status,
   }) = _RaceSessionItemDto;
@@ -35,7 +35,8 @@ extension RaceSessionItemDtoX on RaceSessionItemDto {
       sessionId: sessionId,
       sessionType: sessionType(this.sessionType, sessionTypeNum),
       sessionDescription: sessionDescr(this.sessionType, sessionTypeNum),
-      date: DateEvent.fromString(date),
+      date: DateEvent.fromString(
+          '${date.substring(6)}-${date.substring(3, 5)}-${date.substring(0, 2)}'),
       localStartTime: localStartTime,
       localEndTime: localEndTime,
       category: category,
@@ -65,7 +66,7 @@ extension RaceSessionItemDtoX on RaceSessionItemDto {
                                     : sessionType == "race" &&
                                             sessionTypeNum == "2"
                                         ? "RAC2"
-                                        : " - ";
+                                        : sessionType.toUpperCase();
   }
 
   String sessionDescr(String sessionType, String sessionTypeNum) {

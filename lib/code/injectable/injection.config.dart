@@ -20,6 +20,8 @@ import '../core/i_services_facade/remote/i_ranking_facade.dart';
 import '../core/i_services_facade/remote/i_session_facade.dart';
 import '../services/remote/utils/injectable_module.dart';
 import '../services/remote/race_event/race_event_repository.dart';
+import '../../app/bloc/race/race_info/race_info_bloc.dart';
+import '../../app/bloc/race/race_live/race_live_bloc.dart';
 import '../../app/bloc/ranking/ranking_bloc.dart';
 import '../services/remote/ranking/ranking_repository.dart';
 import '../../app/bloc/session/session_bloc.dart';
@@ -41,6 +43,8 @@ GetIt $initGetIt(
   gh.lazySingleton<IRaceFacade>(() => RaceEventRepocitory(get<Dio>()));
   gh.lazySingleton<IRankingFacade>(() => RankingRepository(get<Dio>()));
   gh.lazySingleton<ISessionFacade>(() => SessionRepository(get<Dio>()));
+  gh.factory<RaceInfoBloc>(() => RaceInfoBloc(get<IRaceFacade>()));
+  gh.factory<RaceLiveBloc>(() => RaceLiveBloc(get<IRaceFacade>()));
   gh.factory<RankingBloc>(() => RankingBloc(get<IRankingFacade>()));
   gh.factory<SessionBloc>(() => SessionBloc(get<ISessionFacade>()));
   gh.factory<CalendarFetchBloc>(
