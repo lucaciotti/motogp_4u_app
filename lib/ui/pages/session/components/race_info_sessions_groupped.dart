@@ -58,31 +58,32 @@ class RaceInfoSessionsGroupped extends HookWidget {
         return Card(
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(25.0),
-              topRight: Radius.circular(25.0),
-              bottomRight: Radius.circular(25.0),
+              topLeft: Radius.circular(15.0),
+              topRight: Radius.circular(15.0),
+              bottomRight: Radius.circular(15.0),
             ),
           ),
           elevation: 5.0,
           margin: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
-          child: InkWell(
-            onTap: () {
-              ExtendedNavigator.of(context).pushRaceLivePage(
-                year: "2020",
-                category: session.category,
-                raceId: raceEvent.raceId,
-                sessionId: session.sessionId,
-                codeLang: 'en',
-              );
-            },
-            child: ListTile(
-              // contentPadding:
-              //     const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-              leading: Text(session.localStartTime),
-              title: Text(
-                  '${session.sessionType} - ${session.sessionDescription}'),
-              trailing: Text(session.status),
+          child: ListTile(
+            leading: Text(
+              session.localStartTime,
+              // style: TextStyle(fontSize: 12.0),
             ),
+            title:
+                Text('${session.sessionType} - ${session.sessionDescription}'),
+            trailing: Text(session.status),
+            onTap: () {
+              if (!session.status.contains('tobeplayed')) {
+                ExtendedNavigator.of(context).pushRaceLivePage(
+                  year: "2020",
+                  category: session.category,
+                  raceId: raceEvent.raceId,
+                  sessionId: session.sessionId,
+                  codeLang: 'en',
+                );
+              }
+            },
           ),
         );
       },

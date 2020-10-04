@@ -51,6 +51,7 @@ dependencies:
   material_design_icons_flutter: ^4.0.5655
   translator: ^0.1.5
   sticky_grouped_list: ^1.2.0
+  timeline_tile: ^1.0.0
 
 dev_dependencies:
   flutter_test:

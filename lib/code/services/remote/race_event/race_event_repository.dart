@@ -21,7 +21,6 @@ import 'package:translator/translator.dart';
 @LazySingleton(as: IRaceFacade)
 class RaceEventRepocitory implements IRaceFacade {
   final Dio _dioProvider;
-  final translator = GoogleTranslator();
   static const String _skyHostName =
       "https://cache.sky.it/tetractis/statistiche/live/motori/json/";
 
@@ -68,6 +67,7 @@ class RaceEventRepocitory implements IRaceFacade {
       return right(
         RaceEventInfoDto.fromJson(jsonData as Map<String, dynamic>)
             .sessions
+            .where((element) => !element.sessionType.contains('grid'))
             .map((session) => session.toEntiry())
             .toList(),
       );
@@ -79,12 +79,13 @@ class RaceEventRepocitory implements IRaceFacade {
 
   @override
   Future<Either<HttpFailure, List<RaceSessionLiveComment>>>
-      getRaceSessionLiveComment(
-          {String year,
-          String category,
-          int raceId,
-          int sessionId,
-          String codeLang}) async {
+      getRaceSessionLiveComment({
+    String year,
+    String category,
+    int raceId,
+    int sessionId,
+    String codeLang,
+  }) async {
     try {
       final Response res = await _dioProvider.get(
           "$_skyHostName/${category.toLowerCase()}/$year/$raceId/commentary_$sessionId.json?_=${DateTime.now().millisecond.toString()}");
@@ -95,14 +96,13 @@ class RaceEventRepocitory implements IRaceFacade {
       final Map jsonData = res.data as Map;
       if (jsonData.isEmpty) return left(const HttpFailure.emptyResult());
 
-      return right(
+      final List<RaceSessionLiveComment> _commentList = await Future.wait(
         RaceSessionLiveCommentaryDto.fromJson(jsonData as Map<String, dynamic>)
             .commentList
-            .map(
-              (comment) => comment.toEntity(),
-            )
-            .toList(),
-      );
+            .map((e) async => e.translate(codeLang)),
+      ).then((value) => value.toList().map((e) => e.toEntity()).toList());
+
+      return right(_commentList);
     } on Exception catch (e) {
       print(e.toString());
       return left(const HttpFailure.unknownError());

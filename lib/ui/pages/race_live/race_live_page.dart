@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:motogp_4u_app/app/bloc/race/race_live/race_live_bloc.dart';
+import 'package:motogp_4u_app/app/bloc/race/race_live_commentary/race_live_commentary_bloc.dart';
+import 'package:motogp_4u_app/app/bloc/race/race_live_standing/race_live_standing_bloc.dart';
 import 'package:motogp_4u_app/code/injectable/injection.dart';
 import 'package:motogp_4u_app/ui/pages/race_live/screens/live_commentary_screen.dart';
+import 'package:motogp_4u_app/ui/pages/race_live/screens/live_standing_screen.dart';
 import 'package:motogp_4u_app/ui/shared/appbar/default_appbar.dart';
 
 class RaceLivePage extends HookWidget {
@@ -25,14 +27,32 @@ class RaceLivePage extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final _controller = useTabController(initialLength: 2);
-    return BlocProvider(
-      create: (context) => getIt<RaceLiveBloc>()
-        ..add(RaceLiveEvent.fetchRaceLive(
-          year: year,
-          category: category,
-          raceId: raceId,
-          sessionId: sessionId,
-        )),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => getIt<RaceLiveCommentaryBloc>()
+            ..add(
+              RaceLiveCommentaryEvent.fetchRaceLiveComment(
+                year: year,
+                category: category,
+                raceId: raceId,
+                sessionId: sessionId,
+                codeLang: 'it',
+              ),
+            ),
+        ),
+        BlocProvider(
+          create: (context) => getIt<RaceLiveStandingBloc>()
+            ..add(
+              RaceLiveStandingEvent.fetchRaceLiveStanding(
+                year: year,
+                category: category,
+                raceId: raceId,
+                sessionId: sessionId,
+              ),
+            ),
+        ),
+      ],
       child: Scaffold(
         appBar: DefaultAppBar(titleText: "Live Race Event"),
         body: Column(
@@ -54,9 +74,7 @@ class RaceLivePage extends HookWidget {
                 controller: _controller,
                 children: <Widget>[
                   const LiveCommentaryScreen(),
-                  Center(
-                    child: Text('Live Standing'),
-                  ),
+                  const LiveStandingScreen(),
                 ],
               ),
             ),
