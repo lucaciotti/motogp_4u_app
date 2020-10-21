@@ -30,17 +30,21 @@ class CalendarCard extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           ListTile(
+            contentPadding:
+                EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
+            dense: true,
+            visualDensity: VisualDensity.compact,
             title: Text(
               event.name,
-              style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
             ),
             subtitle: Text(
               "${event.location} (${event.nation})",
-              style: TextStyle(fontSize: 15.0),
+              style: TextStyle(fontSize: 14.0),
             ),
             trailing: Text(
               !event.isTest ? event.eventNumber.toString() : "",
-              style: TextStyle(fontSize: 15.0),
+              style: TextStyle(fontSize: 14.0),
             ),
           ),
           Stack(
@@ -73,7 +77,7 @@ class CalendarCard extends StatelessWidget {
                           child: Text(
                             "Test Session",
                             style: TextStyle(
-                              fontSize: 22.0,
+                              fontSize: 18.0,
                               // color: Colors.redAccent,
                               fontWeight: FontWeight.bold,
                             ),
@@ -91,7 +95,7 @@ class CalendarCard extends StatelessWidget {
                         child: Text(
                           "$datEventString",
                           style: TextStyle(
-                            fontSize: 22.0,
+                            fontSize: 18.0,
                             fontWeight: FontWeight.bold,
                             fontStyle: FontStyle.italic,
                           ),
@@ -104,7 +108,7 @@ class CalendarCard extends StatelessWidget {
             ],
           ),
           Container(
-            height: 40.0,
+            height: 32.0,
             child: Row(
               children: [
                 Expanded(

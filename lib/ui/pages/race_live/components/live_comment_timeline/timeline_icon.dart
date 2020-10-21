@@ -20,7 +20,12 @@ class TimelineIcon extends StatelessWidget {
               topRight: Radius.circular(12.0),
               bottomRight: Radius.circular(12.0),
             ),
-            color: Colors.deepPurple[100],
+            border: Border.all(
+              color:
+                  Colors.deepPurple[200], //                   <--- border color
+              width: 3.0,
+            ),
+            // color: Colors.deepPurple[100],
           ),
         ),
         Positioned.fill(
@@ -40,7 +45,7 @@ class TimelineIcon extends StatelessWidget {
                                 ? MdiIcons.flagCheckered
                                 : MdiIcons.informationVariant,
                 size: 25,
-                color: Colors.red,
+                color: Colors.red[300],
               ),
             ),
           ),

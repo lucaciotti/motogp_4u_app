@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:motogp_4u_app/app/bloc/home_event/home_event_bloc.dart';
 import 'package:motogp_4u_app/ui/pages/calendar/components/calendar_card.dart';
+import 'package:motogp_4u_app/ui/pages/calendar/components/calendar_event_title.dart';
 import 'package:motogp_4u_app/ui/routes/router.gr.dart';
 
 class PrevNextEventsScreen extends StatelessWidget {
@@ -40,27 +41,52 @@ class PrevNextEventsScreen extends StatelessWidget {
               },
               child: ListView(
                 children: [
-                  const ListTile(
-                    title: Text('Previous Event'),
+                  const EventTitle(
+                    textTitle: 'Previous Event',
                   ),
                   CalendarCard(
                     event: state.prevEvent,
                   ),
-                  ListTile(
-                    title: Text((state.nextEvent.date.getOrCrash().day ==
+                  Divider(
+                    height: 10.0,
+                    thickness: 3.0,
+                    indent: 20.0,
+                    endIndent: 20.0,
+                    color: Colors.grey[600].withOpacity(0.8),
+                  ),
+                  EventTitle(
+                    textTitle: (state.nextEvent.date.getOrCrash().day ==
                             DateTime.now().day)
                         ? 'Actual Event'
-                        : 'Next Event'),
+                        : 'Next Event',
                   ),
                   CalendarCard(
                     event: state.nextEvent,
                   ),
-                  InkWell(
-                    onTap: () =>
-                        ExtendedNavigator.of(context).push(Routes.calendarPage),
-                    child: const ListTile(
-                      title: Text('Full Calendar'),
-                      trailing: Icon(Icons.arrow_forward_ios),
+                  Divider(
+                    height: 10.0,
+                    thickness: 3.0,
+                    indent: 20.0,
+                    endIndent: 20.0,
+                    color: Colors.grey[600].withOpacity(0.8),
+                  ),
+                  Card(
+                    elevation: 5,
+                    clipBehavior: Clip.antiAlias,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(25.0),
+                        topRight: Radius.circular(25.0),
+                        bottomRight: Radius.circular(25.0),
+                      ),
+                    ),
+                    child: InkWell(
+                      onTap: () => ExtendedNavigator.of(context)
+                          .push(Routes.calendarPage),
+                      child: const ListTile(
+                        title: Text('Full Calendar'),
+                        trailing: Icon(Icons.arrow_forward_ios),
+                      ),
                     ),
                   ),
                 ],
